@@ -6,9 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import { ProblemasComponent } from './modules/problemas/problemas.component';
-import { IdentityComponent } from './modules/shared/components/identity/identity.component';
-import { HeaderComponent } from './modules/shared/components/header/header.component';
+import { ProblemasComponent } from './problemas/problemas.component';
+import { IdentityComponent } from './shared/components/identity/identity.component';
 
 
 @NgModule({
@@ -16,8 +15,7 @@ import { HeaderComponent } from './modules/shared/components/header/header.compo
     AppComponent,
     HomeComponent,
     ProblemasComponent,
-    IdentityComponent,
-    HeaderComponent   // incluir outros novos componentes aqui
+    IdentityComponent  // incluir outros novos componentes aqui
   ],
   imports: [
     BrowserModule,

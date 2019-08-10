@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../http.service';
+import { HttpService } from '../shared/services/http.service';
 
 @Component({
   selector: 'app-problemas',
@@ -16,7 +16,7 @@ export class ProblemasComponent implements OnInit {
     this.http.getCadProblemas().subscribe( dados => {
         this.problemas = dados,
         console.log(this.problemas);
-    })
+    });
   }
 
 }
