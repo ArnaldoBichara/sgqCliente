@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-problemas',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProblemasComponent implements OnInit {
 
-  constructor() { }
+  problemas: object;
+
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
+    this.http.getCadProblemas().subscribe( dados => {
+        this.problemas = dados,
+        console.log(this.problemas);
+    })
   }
 
 }
