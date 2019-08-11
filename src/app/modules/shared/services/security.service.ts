@@ -24,9 +24,9 @@ export class SecurityService {
         });
 
         if (this.storage.retrieve('IsAuthorized') !== '') {
-            this.IsAuthorized = this.storage.retrieve('IsAuthorized');
+            this.isAuthorized = this.storage.retrieve('IsAuthorized');
             this.authenticationSource.next(true);
-            this.UserData = this.storage.retrieve('userData');
+            this.userData = this.storage.retrieve('userData');
         }
     }
 
@@ -38,9 +38,9 @@ export class SecurityService {
     authenticationChallenge$ = this.authenticationSource.asObservable();
     private authorityUrl = '';
 
-    public IsAuthorized: boolean;
+    public isAuthorized: boolean;
 
-    public UserData: any;
+    public userData: any;
 
     public GetToken(): any {
         return this.storage.retrieve('authorizationData');
@@ -50,7 +50,7 @@ export class SecurityService {
         this.storage.store('authorizationData', '');
         this.storage.store('authorizationDataIdToken', '');
 
-        this.IsAuthorized = false;
+        this.isAuthorized = false;
         this.storage.store('IsAuthorized', false);
     }
     public SetAuthorizationData(token: any, idtoken: any) {
@@ -60,12 +60,12 @@ export class SecurityService {
 
         this.storage.store('authorizationData', token);
         this.storage.store('authorizationDataIdToken', idtoken);
-        this.IsAuthorized = true;
+        this.isAuthorized = true;
         this.storage.store('IsAuthorized', true);
 
         this.getUserData()
             .subscribe(data => {
-                this.UserData = data;
+                this.userData = data;
                 this.storage.store('userData', data);
                 // emit observable
                 this.authenticationSource.next(true);
@@ -73,7 +73,7 @@ export class SecurityService {
             },
             error => this.HandleError(error),
             () => {
-                console.log(this.UserData);
+                console.log(this.userData);
             });
     }
 

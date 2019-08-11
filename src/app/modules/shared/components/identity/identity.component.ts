@@ -1,7 +1,6 @@
 import { Component, OnInit, OnChanges, Output, Input, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { IIdentity } from '../../models/identity.model';
 import { SecurityService } from '../../services/security.service';
 
 @Component({
@@ -22,19 +21,19 @@ export class IdentityComponent implements OnInit {
     ngOnInit() {
         this.subscription = this.service.authenticationChallenge$.subscribe(res => {
             this.authenticated = res;
-            this.userName = this.service.UserData.email;
+            this.userName = this.service.userData.email;
         });
 
         if (window.location.hash) {
             this.service.AuthorizedCallback();
         }
 
-        console.log('identity component, checking authorized' + this.service.IsAuthorized);
-        this.authenticated = this.service.IsAuthorized;
+        console.log('identity component, checking authorized' + this.service.isAuthorized);
+        this.authenticated = this.service.isAuthorized;
 
         if (this.authenticated) {
-            if (this.service.UserData) {
-                this.userName = this.service.UserData.email;
+            if (this.service.userData) {
+                this.userName = this.service.userData.email;
             }
         }
     }
