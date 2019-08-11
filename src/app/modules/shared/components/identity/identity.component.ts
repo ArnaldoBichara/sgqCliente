@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, Input, EventEmitter } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { IIdentity } from '../../models/identity.model';
+import { SecurityService } from '../../services/security.service';
 
 @Component({
   selector: 'app-identity',
@@ -7,9 +11,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdentityComponent implements OnInit {
 
-  constructor() { }
+    authenticated = false;
+    private subscription: Subscription;
+    private userName = '';
 
-  ngOnInit() {
-  }
+    constructor(private service: SecurityService) {
 
+    }
+
+    ngOnInit() {
+        this.subscription = this.service.authenticationChallenge$.subscribe(res => {
+            this.authenticated = res;
+            this.userName = this.service.UserData.email;
+        });
+
+        if (window.location.hash) {
+            this.service.AuthorizedCallback();
+        }
+
+        console.log('identity component, checking authorized' + this.service.IsAuthorized);
+        this.authenticated = this.service.IsAuthorized;
+
+        if (this.authenticated) {
+            if (this.service.UserData) {
+                this.userName = this.service.UserData.email;
+            }
+        }
+    }
+
+    logoutClicked(event: any) {
+        event.preventDefault();
+        console.log('Logout clicked');
+        this.logout();
+    }
+
+    login() {
+        this.service.Authorize();
+    }
+
+    logout() {
+        this.service.Logoff();
+    }
 }
+

@@ -23,6 +23,7 @@ export class ConfigurationService {
             this.serverSettings = response as IConfiguration;
             console.log(this.serverSettings);
             this.storageService.store('identityUrl', this.serverSettings.identityUrl);
+            this.storageService.store('signalrHubUrl', this.serverSettings.signalrHubUrl);
             this.storageService.store('webapigwUrl', this.serverSettings.webapigwUrl);
             this.isReady = true;
             this.settingsLoadedSource.next();
