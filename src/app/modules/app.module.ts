@@ -12,11 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import { ProblemasComponent } from './problemas/problemas.component';
+import { CadProblemasComponent } from './cad-problemas/cad-problemas.component';
 import { IdentityComponent } from './shared/components/identity/identity.component';
 
 // Services
-import { DataService } from './shared/services/data.service';
+import { HttpService } from './shared/services/http.service';
 import { SecurityService } from './shared/services/security.service';
 import { ConfigurationService } from './shared/services/configuration.service';
 import { StorageService } from './shared/services/storage.service';
@@ -28,7 +28,7 @@ import { StorageService } from './shared/services/storage.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    ProblemasComponent,
+    CadProblemasComponent,
     IdentityComponent  // incluir outros novos componentes aqui
   ],
   imports: [
@@ -46,7 +46,7 @@ import { StorageService } from './shared/services/storage.service';
     JsonpModule
   ],
   providers: [
-    DataService,
+    HttpService,
     SecurityService,
     ConfigurationService,
     StorageService

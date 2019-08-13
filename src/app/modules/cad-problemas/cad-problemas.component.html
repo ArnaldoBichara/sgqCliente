@@ -1,0 +1,9 @@
+<h1>Problemas Cadastrados</h1>
+
+<ul *ngIf="cadProblemas">
+  <li *ngFor="let cadProblema of cadProblemas">
+    <p class="name">{{ cadProblema.name }}</p>
+    <p class="country">{{ cadProblema.country }}</p>
+    <a class="site" href="{{ cadProblema.website_url }}">site</a>
+  </li>
+</ul>

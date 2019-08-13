@@ -6,7 +6,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Services
-import { DataService } from './services/data.service';
+import { HttpService } from './services/http.service';
 import { SecurityService } from './services/security.service';
 import { ConfigurationService } from './services/configuration.service';
 import { StorageService } from './services/storage.service';
@@ -60,7 +60,7 @@ export class SharedModule {
             ngModule: SharedModule,
             providers: [
                 // Providers
-                DataService,
+                HttpService,
                 SecurityService,
                 ConfigurationService,
                 StorageService
