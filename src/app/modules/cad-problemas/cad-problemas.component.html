@@ -1,9 +1,26 @@
-<h1>Problemas Cadastrados</h1>
-
-<ul *ngIf="cadProblemas">
-  <li *ngFor="let cadProblema of cadProblemas">
-    <p class="name">{{ cadProblema.name }}</p>
-    <p class="country">{{ cadProblema.country }}</p>
-    <a class="site" href="{{ cadProblema.website_url }}">site</a>
-  </li>
-</ul>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2> Problemas Cadastrados </h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Descrição</th>
+          <th>Ações Corretivas</th>
+          <th>Operações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cadProblema of cadProblemas | async">
+          <td>{{cadProblema.Codigo}}</td>
+          <td>{{cadProblema.Descricao}}</td>
+          <td>{{cadProblema.Acoes_Corretivas}}</td>
+          <td><button (click)="cadProblema(cadProblema.Codigo)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
