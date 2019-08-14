@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CadProblemasService } from './cad-problemas.service';
+import { CadProblemasService } from '../cad-problemas.service';
 
 describe('CadProblemasService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

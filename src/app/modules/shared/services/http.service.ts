@@ -39,6 +39,10 @@ export class HttpService {
         return this.doPut(url, data, true, params);
     }
 
+    put(url: string, data: any, params?: any): Observable<Response> {
+        return this.doPut(url, data, true, params);
+    }
+
     private doPost(url: string, data: any, needId: boolean, params?: any): Observable<Response> {
         let options = { };
         this.setHeaders(options, needId);

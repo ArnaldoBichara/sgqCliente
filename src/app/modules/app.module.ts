@@ -12,7 +12,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import { CadProblemasComponent } from './cad-problemas/cad-problemas.component';
+import { CadProblemasComponent } from './cad-problema/cad-problemas/cad-problemas.component';
+import { CadProblemaCreateComponent } from './cad-problema/cad-problema-create/cad-problema-create.component';
+import { CadProblemaDetalhesComponent } from './cad-problema/cad-problema-detalhes/cad-problema-detalhes.component';
 import { IdentityComponent } from './shared/components/identity/identity.component';
 
 // Services
@@ -28,8 +30,10 @@ import { StorageService } from './shared/services/storage.service';
   declarations: [
     AppComponent,
     HomeComponent,
+    IdentityComponent,  
     CadProblemasComponent,
-    IdentityComponent  // incluir outros novos componentes aqui
+    CadProblemaCreateComponent,
+    CadProblemaDetalhesComponent
   ],
   imports: [
     BrowserModule,

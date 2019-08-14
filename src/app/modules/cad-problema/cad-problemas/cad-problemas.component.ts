@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { CadProblemasService } from './cad-problemas.service';
-import { CadProblema } from '../shared/models/cad-problema.model';
+import { CadProblemasService } from '../cad-problemas.service';
+import { CadProblema } from '../cad-problema.model';
 
 
 @Component({
@@ -18,15 +18,11 @@ export class CadProblemasComponent implements OnInit {
 
   ngOnInit() {
       this.reloadData();
-//    this.cadProblemasService.getCadProblemas().subscribe( dados => {
-//        this.cadProblemas = dados,
-//        console.log(this.cadProblemas);
-//    });
   }
   reloadData() {
     this.cadProblemas = this.cadProblemasService.getCadProblemas();
   }
-  cadProblemaDetalhes(id: number){
-    this.router.navigate(['detalhes', id]);
+  cadProblemaDetalhes(codigo: string){
+    this.router.navigate(['detalhesCadProblema', codigo]);
   }
 }
