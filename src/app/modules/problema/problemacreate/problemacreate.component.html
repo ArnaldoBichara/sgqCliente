@@ -1,0 +1,100 @@
+<h3>Cria Problema</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Id</label>
+      <input type="text" class="form-control" id="Id" required [(ngModel)]="Problema.id" name="id">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Código</label>
+      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Descrição</label>
+      <input type="text" class="form-control" id="Descricao" required [(ngModel)]="Problema.descricao" name="descricao">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Ações Corretivas</label>
+      <input type="text" class="form-control" id="Acoes_Corretivas" required [(ngModel)]="Problema.acoes_Corretivas" name="acoes_Corretivas">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Data de Início</label>
+      <input type="text" class="form-control" id="DataInicio" required [(ngModel)]="Problema.dataInicio" name="dataInicio">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Local</label>
+      <input type="text" class="form-control" id="Local" required [(ngModel)]="Problema.local" name="local">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Turno</label>
+      <input type="text" class="form-control" id="Turno" required [(ngModel)]="Problema.turno" name="turno">
+    </div>
+TODO - reportado por deve ser meu login. Criar login e conseguir apresentar aqui, sem pedir o dado
+    <div class="form-group">
+      <label for="name">Reportado Por</label>
+      <input type="text" class="form-control" id="ReportadoPor" required [(ngModel)]="Problema.reportadoPor" name="reportadoPor">
+    </div>
+TODO - criar com estado = 'Novo' e apresentar aqui
+    <div class="form-group">
+      <label for="name">Estado</label>
+      <input type="text" class="form-control" id="Estado" required [(ngModel)]="Problema.estado" name="estado">
+    </div>
+TODO - continuar daqui
+    <div class="form-group">
+      <label for="name">Código</label>
+      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Código</label>
+      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Código</label>
+      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </form>
+</div>
+
+<div>
+  <label><b>Estado: </b></label> {{Problema.estado}}
+</div>
+<div>
+  <label><b>Não Conformidade: </b></label> {{Problema.naoConformidade}}
+</div>
+<div>
+  <label><b>Id do Produto / Processo: </b></label> {{Problema.idProdutoProcesso}}
+</div>  
+<div>
+  <label><b>Nome do Produto / Processo: </b></label> {{Problema.nomeProdutoProcesso}}
+</div>  
+<div>
+  <label><b>Ações Executadas: </b></label> {{Problema.acoesExecutadas}}
+</div>  
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Usuário</th>
+      <th>Comentário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comentario of Problema.Comentarios | async">
+      <td>{{comentario.Data}}</td>
+      <td>{{comentario.userLogin}}</td>
+      <td>{{comentario.Texto}}</td>
+      </td>
+    </tr>
+  </tbody>
+</table>

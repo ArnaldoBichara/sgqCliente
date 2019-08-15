@@ -1,0 +1,67 @@
+<h2>Detalhes do Problema</h2> 
+
+<hr/>
+<div *ngIf="Problema">
+  <div>
+    <label><b>Id: </b></label> {{Problema.id}}
+  </div>
+  <div>
+    <label><b>Código: </b></label> {{Problema.codigo}}
+  </div>
+  <div>
+    <label><b>Descrição: </b></label> {{Problema.descricao}}
+  </div>
+  <div>
+    <label><b>Ações Corretivas: </b></label> {{Problema.acoes_Corretivas}}
+  </div>  
+  <div>
+    <label><b>Data de Início: </b></label> {{Problema.dataInicio}}
+  </div>
+  <div>
+    <label><b>Local: </b></label> {{Problema.local}}
+  </div>  
+  <div>
+    <label><b>Turno: </b></label> {{Problema.turno}}
+  </div>
+  <div>
+    <label><b>Reportado Por: </b></label> {{Problema.reportadoPor}}
+  </div>
+  <div>
+    <label><b>Data Final: </b></label> {{Problema.dataFim}}
+  </div>  
+  <div>
+    <label><b>Estado: </b></label> {{Problema.estado}}
+  </div>
+  <div>
+    <label><b>Não Conformidade: </b></label> {{Problema.naoConformidade}}
+  </div>
+  <div>
+    <label><b>Id do Produto / Processo: </b></label> {{Problema.idProdutoProcesso}}
+  </div>  
+  <div>
+    <label><b>Nome do Produto / Processo: </b></label> {{Problema.nomeProdutoProcesso}}
+  </div>  
+  <div>
+    <label><b>Ações Executadas: </b></label> {{Problema.acoesExecutadas}}
+  </div>  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Usuário</th>
+        <th>Comentário</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comentario of Problema.Comentarios | async">
+        <td>{{comentario.Data}}</td>
+        <td>{{comentario.userLogin}}</td>
+        <td>{{comentario.Texto}}</td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar à lista de Problemas</button><br>

@@ -2,11 +2,22 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { ProblemasComponent } from './problemas/problemas.component';
+import { CadProblemasComponent } from './cad-problema/cad-problemas/cad-problemas.component';
+import { CadProblemaCreateComponent } from './cad-problema/cad-problema-create/cad-problema-create.component';
+import { CadProblemaDetalhesComponent } from './cad-problema/cad-problema-detalhes/cad-problema-detalhes.component';
+import { ProblemaComponent } from './problema/problemas/problema.component';
+import { ProblemaCreateComponent } from './problema/problemacreate/problemacreate.component';
+import { ProblemaDetalhesComponent } from './problema/problemadetalhes/problemadetalhes.component';
+
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'problemas', component: ProblemasComponent }
+  { path: 'Home', component: HomeComponent },
+  { path: 'CadProblemas', component: CadProblemasComponent },
+  { path: 'detalhesCadProblema', component: CadProblemaDetalhesComponent },
+  { path: 'addCadProblema', component: CadProblemaCreateComponent }
+  { path: 'Problemas', component: ProblemaComponent },
+  { path: 'detalhesProblema', component: ProblemaDetalhesComponent },
+  { path: 'addProblema', component: ProblemaCreateComponent }
 ];
 
 @NgModule({
