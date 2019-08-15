@@ -37,64 +37,32 @@
     </div>
 TODO - reportado por deve ser meu login. Criar login e conseguir apresentar aqui, sem pedir o dado
     <div class="form-group">
-      <label for="name">Reportado Por</label>
-      <input type="text" class="form-control" id="ReportadoPor" required [(ngModel)]="Problema.reportadoPor" name="reportadoPor">
+      <label for="name">Reportado Por</label> {{Problema.reportadoPor}}
     </div>
-TODO - criar com estado = 'Novo' e apresentar aqui
     <div class="form-group">
-      <label for="name">Estado</label>
-      <input type="text" class="form-control" id="Estado" required [(ngModel)]="Problema.estado" name="estado">
+      <label for="name">Estado</label> {{Problema.estado}}
     </div>
-TODO - continuar daqui
     <div class="form-group">
-      <label for="name">Código</label>
-      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+      <label for="name">Não Conformidade </label>
+      <input type="text" class="form-control" id="NaoConformidade" required [(ngModel)]="Problema.naoConformidade" name="naoConformidade">
     </div>
 
     <div class="form-group">
-      <label for="name">Código</label>
-      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+      <label for="name">Id do Produto / Processo</label>
+      <input type="text" class="form-control" id="IdProdutoProcesso" required [(ngModel)]="Problema.idProdutoProcesso" name="idProdutoProcesso">
     </div>
 
     <div class="form-group">
-      <label for="name">Código</label>
-      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+      <label for="name">Nome do Produto / Processo</label>
+      <input type="text" class="form-control" id="NomeProdutoProcesso" required [(ngModel)]="Problema.nomeProdutoProcesso" name="nomeProdutoProcesso">
     </div>
 
+    <div class="form-group">
+      <label for="name">Ações Executadas</label>
+      <input type="text" class="form-control" id="acoesExecutadas" required [(ngModel)]="Problema.acoesExecutadas" name="acoesExecutadas">
+    </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>
   </form>
 </div>
 
-<div>
-  <label><b>Estado: </b></label> {{Problema.estado}}
-</div>
-<div>
-  <label><b>Não Conformidade: </b></label> {{Problema.naoConformidade}}
-</div>
-<div>
-  <label><b>Id do Produto / Processo: </b></label> {{Problema.idProdutoProcesso}}
-</div>  
-<div>
-  <label><b>Nome do Produto / Processo: </b></label> {{Problema.nomeProdutoProcesso}}
-</div>  
-<div>
-  <label><b>Ações Executadas: </b></label> {{Problema.acoesExecutadas}}
-</div>  
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th>Usuário</th>
-      <th>Comentário</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let comentario of Problema.Comentarios | async">
-      <td>{{comentario.Data}}</td>
-      <td>{{comentario.userLogin}}</td>
-      <td>{{comentario.Texto}}</td>
-      </td>
-    </tr>
-  </tbody>
-</table>

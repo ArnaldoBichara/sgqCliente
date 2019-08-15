@@ -1,13 +1,25 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <!-- Links -->
   <ul class="navbar-nav">
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="!authenticated"> 
+      <a routerLink="login" class="nav-link" routerLinkActive="active">Login</a>
+  </li>
+  <li class="nav-item" *ngIf="authenticated"> 
+    <a class="nav-link" routerLinkActive="active">{{userName}}</a>
+</li>
+<li class="nav-item" *ngIf="authenticated">
         <a routerLink="CadProblemas" class="nav-link" routerLinkActive="active">Problemas Cadastrados</a>
     </li>
-    <li class="nav-item">
-        <a routerLink="addCadProblema" class="nav-link" routerLinkActive="active">Novo Cadastro Problema</a>
+    <li class="nav-item" *ngIf="authenticated">
+        <a routerLink="addCadProblema" class="nav-link" routerLinkActive="active">Cadastrar Problema</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="authenticated">
+      <a routerLink="Problemas" class="nav-link" routerLinkActive="active">Registros de Problema</a>
+  </li>
+  <li class="nav-item" *ngIf="authenticated">
+      <a routerLink="addProblema" class="nav-link" routerLinkActive="active">Registrar Problema</a>
+  </li>
+  <li class="nav-item" *ngIf="authenticated">
       <a routerLink="Home" class="nav-link" routerLinkActive="active">Ajuda</a>
   </li>
 </ul>
@@ -24,6 +36,6 @@
 </div>
 <footer class="footer">
   <div class="container">
-      <span>TCC Arnaldo Almeida 2019 - Baseado em @JavaGuides</span>
+      <span>TCC Arnaldo Almeida 2019 - Arquitetura de Sistemas Distribuídos - Puc Minas - Baseado em @JavaGuides</span>
   </div>
 </footer>

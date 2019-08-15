@@ -12,10 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
+import { IdentityComponent } from './identity/identity.component';
 import { CadProblemasComponent } from './cad-problema/cad-problemas/cad-problemas.component';
 import { CadProblemaCreateComponent } from './cad-problema/cad-problema-create/cad-problema-create.component';
 import { CadProblemaDetalhesComponent } from './cad-problema/cad-problema-detalhes/cad-problema-detalhes.component';
-import { IdentityComponent } from './shared/components/identity/identity.component';
+import { ProblemaComponent } from './problema/problemas/problema.component';
+import { ProblemaCreateComponent } from './problema/problemacreate/problemacreate.component';
+import { ProblemaDetalhesComponent } from './problema/problemadetalhes/problemadetalhes.component';
+//import { RegisterComponent } from './register/register.component';
 
 // Services
 import { HttpService } from './shared/services/http.service';
@@ -33,7 +37,12 @@ import { StorageService } from './shared/services/storage.service';
     IdentityComponent,  
     CadProblemasComponent,
     CadProblemaCreateComponent,
-    CadProblemaDetalhesComponent
+    CadProblemaDetalhesComponent,
+    ProblemaComponent,
+    ProblemaCreateComponent,
+    ProblemaDetalhesComponent,
+    IdentityComponent
+//    RegisterComponent
   ],
   imports: [
     BrowserModule,

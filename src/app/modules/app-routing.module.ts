@@ -8,16 +8,21 @@ import { CadProblemaDetalhesComponent } from './cad-problema/cad-problema-detalh
 import { ProblemaComponent } from './problema/problemas/problema.component';
 import { ProblemaCreateComponent } from './problema/problemacreate/problemacreate.component';
 import { ProblemaDetalhesComponent } from './problema/problemadetalhes/problemadetalhes.component';
+import { IdentityComponent } from './identity/identity.component';
+//import { RegisterComponent } from './register/register.component';
 
 
 export const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'CadProblemas', component: CadProblemasComponent },
   { path: 'detalhesCadProblema', component: CadProblemaDetalhesComponent },
-  { path: 'addCadProblema', component: CadProblemaCreateComponent }
+  { path: 'addCadProblema', component: CadProblemaCreateComponent },
   { path: 'Problemas', component: ProblemaComponent },
   { path: 'detalhesProblema', component: ProblemaDetalhesComponent },
-  { path: 'addProblema', component: ProblemaCreateComponent }
+  { path: 'addProblema', component: ProblemaCreateComponent },
+  { path: 'login', component: IdentityComponent },
+//  { path: 'register', component: RegisterComponent },
+  { path: '**', redirectTo: 'Home' }
 ];
 
 @NgModule({

@@ -6,11 +6,17 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ConfigurationService } from './configuration.service';
 import { StorageService } from './storage.service';
+import {Usuario} from '../models/usuario.model';
 
 @Injectable()
 export class SecurityService {
 
-    // tslint:disable-next-line: max-line-length
+    private actionUrl: string;
+    private headers: Headers;
+    private storage: StorageService;
+    private authenticationSource = new Subject<boolean>();
+    authenticationChallenge$ = this.authenticationSource.asObservable();
+    private authorityUrl = '';
     constructor(private http: Http, private router: Router, private route: ActivatedRoute, private configurationService: ConfigurationService, private storageService: StorageService) {
         // tslint:disable-next-line: deprecation
         this.headers = new Headers();
@@ -24,23 +30,17 @@ export class SecurityService {
         });
 
         if (this.storage.retrieve('IsAuthorized') !== '') {
-            this.isAuthorized = this.storage.retrieve('IsAuthorized');
+            this.IsAuthorized = this.storage.retrieve('IsAuthorized');
             this.authenticationSource.next(true);
-            this.userData = this.storage.retrieve('userData');
+//            this.userData = this.storage.retrieve('userData');
         }
     }
 
-    private actionUrl: string;
-    // tslint:disable-next-line: deprecation
-    private headers: Headers;
-    private storage: StorageService;
-    private authenticationSource = new Subject<boolean>();
-    authenticationChallenge$ = this.authenticationSource.asObservable();
-    private authorityUrl = '';
 
-    public isAuthorized: boolean;
+    public IsAuthorized: boolean;
 
-    public userData: any;
+    
+
 
     public GetToken(): any {
         return this.storage.retrieve('authorizationData');
@@ -50,33 +50,37 @@ export class SecurityService {
         this.storage.store('authorizationData', '');
         this.storage.store('authorizationDataIdToken', '');
 
-        this.isAuthorized = false;
+        this.IsAuthorized = false;
         this.storage.store('IsAuthorized', false);
+
+        this.storage.store('UserName', '');
+        this.storage.store('UserEmail', '');
     }
-    public SetAuthorizationData(token: any, idtoken: any) {
+    public UserData: any;
+    public SetAuthorizationData(token: any, id_token: any) {
         if (this.storage.retrieve('authorizationData') !== '') {
             this.storage.store('authorizationData', '');
         }
 
         this.storage.store('authorizationData', token);
-        this.storage.store('authorizationDataIdToken', idtoken);
-        this.isAuthorized = true;
+        this.storage.store('authorizationDataIdToken', id_token);
+        this.IsAuthorized = true;
         this.storage.store('IsAuthorized', true);
 
-        this.getUserData()
+/*        this.getUserData()
             .subscribe(data => {
-                this.userData = data;
+                this.UserData = data;
                 this.storage.store('userData', data);
                 // emit observable
                 this.authenticationSource.next(true);
-                window.location.href = location.origin;
+//                window.location.href = location.origin;
             },
             error => this.HandleError(error),
             () => {
-                console.log(this.userData);
+                console.log(this.UserData);
             });
+*/
     }
-
     public Authorize() {
         this.ResetAuthorizationData();
 
@@ -94,66 +98,16 @@ export class SecurityService {
         this.storage.store('authStateControl', state);
         this.storage.store('authNonce', nonce);
 
-        const url =
-            authorizationUrl + '?' +
-            'response_type=' + encodeURI(response_type) + '&' +
-            'client_id=' + encodeURI(client_id) + '&' +
-            'redirect_uri=' + encodeURI(redirect_uri) + '&' +
-            'scope=' + encodeURI(scope) + '&' +
-            'nonce=' + encodeURI(nonce) + '&' +
-            'state=' + encodeURI(state);
+        // fazendo um curto circuito aqui. Sempre autoriza
+        // validate nonce
+        this.storage.store('authNonce', '');
+        this.storage.store('authStateControl', '');
 
-        window.location.href = url;
+        console.log('AuthorizedCallback state and nonce validated, returning access token');
+
+        this.SetAuthorizationData("1", "1");
     }
 
-    public AuthorizedCallback() {
-        this.ResetAuthorizationData();
-
-        const hash = window.location.hash.substr(1);
-
-        // tslint:disable-next-line: only-arrow-functions no-shadowed-variable
-        const result: any = hash.split('&').reduce(function(result: any, item: string) {
-            const parts = item.split('=');
-            result[parts[0]] = parts[1];
-            return result;
-        }, {});
-
-        console.log(result);
-
-        let token = '';
-        let idtoken = '';
-        let authResponseIsValid = false;
-
-        if (!result.error) {
-
-            if (result.state !== this.storage.retrieve('authStateControl')) {
-                console.log('AuthorizedCallback incorrect state');
-            } else {
-
-                token = result.access_token;
-                idtoken = result.idtoken;
-
-                const dataIdToken: any = this.getDataFromToken(idtoken);
-                console.log(dataIdToken);
-
-                // validate nonce
-                if (dataIdToken.nonce !== this.storage.retrieve('authNonce')) {
-                    console.log('AuthorizedCallback incorrect nonce');
-                } else {
-                    this.storage.store('authNonce', '');
-                    this.storage.store('authStateControl', '');
-
-                    authResponseIsValid = true;
-                    console.log('AuthorizedCallback state and nonce validated, returning access token');
-                }
-            }
-        }
-
-
-        if (authResponseIsValid) {
-            this.SetAuthorizationData(token, idtoken);
-        }
-    }
 
     public Logoff() {
         const authorizationUrl = this.authorityUrl + '/connect/endsession';
@@ -161,16 +115,16 @@ export class SecurityService {
         const idtokenhint = this.storage.retrieve('authorizationDataIdToken');
         const postlogoutredirecturi = location.origin + '/';
 
-        const url =
+/*        let url =
             authorizationUrl + '?' +
             'id_token_hint=' + encodeURI(idtokenhint) + '&' +
             'post_logout_redirect_uri=' + encodeURI(postlogoutredirecturi);
-
+*/
         this.ResetAuthorizationData();
 
         // emit observable
         this.authenticationSource.next(false);
-        window.location.href = url;
+//        window.location.href = url;
     }
 
     public HandleError(error: any) {
@@ -201,7 +155,7 @@ export class SecurityService {
         return window.atob(output);
     }
 
-    private getDataFromToken(token: any) {
+/*    private getDataFromToken(token: any) {
         let data = {};
         if (typeof token !== 'undefined') {
             const encoded = token.split('.')[1];
@@ -210,14 +164,13 @@ export class SecurityService {
 
         return data;
     }
-
-    private getUserData = (): Observable<string[]> => {
+*/
+/*    private getUserData = (): Observable<string[]> => {
         this.setHeaders();
-        if (this.authorityUrl === '') {
+        if (this.authorityUrl === '')
             this.authorityUrl = this.storage.retrieve('IdentityUrl');
-        }
 
-        return this.http.get(this.authorityUrl + '/connect/userinfo', {
+        return this._http.get(this.authorityUrl + '/connect/userinfo', {
             headers: this.headers,
             body: ''
         }).pipe(map(res => res.json()));
@@ -235,4 +188,4 @@ export class SecurityService {
             this.headers.append('Authorization', 'Bearer ' + token);
         }
     }
-}
+*/}
