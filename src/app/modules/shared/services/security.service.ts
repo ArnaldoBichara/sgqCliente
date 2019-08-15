@@ -4,7 +4,6 @@ import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { ConfigurationService } from './configuration.service';
 import { StorageService } from './storage.service';
 import {Usuario} from '../models/usuario.model';
 
@@ -17,30 +16,30 @@ export class SecurityService {
     private authenticationSource = new Subject<boolean>();
     authenticationChallenge$ = this.authenticationSource.asObservable();
     private authorityUrl = '';
-    constructor(private http: Http, private router: Router, private route: ActivatedRoute, private configurationService: ConfigurationService, private storageService: StorageService) {
+    public IsAuthorized: boolean;
+    
+    constructor(private http: Http, private router: Router, private route: ActivatedRoute, private storageService: StorageService) {
         // tslint:disable-next-line: deprecation
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
         this.storage = storageService;
+        this.UserData = new Usuario;
 
-        this.configurationService.settingsLoaded$.subscribe(() => {
+/*        this.configurationService.settingsLoaded$.subscribe(() => {
             this.authorityUrl = this.configurationService.serverSettings.identityUrl;
             this.storage.store('IdentityUrl', this.authorityUrl);
         });
-
+*/
         if (this.storage.retrieve('IsAuthorized') !== '') {
             this.IsAuthorized = this.storage.retrieve('IsAuthorized');
+            if (this.IsAuthorized == true) {
+                this.UserData.email = this.storage.retrieve('userEmail');
+                this.UserData.nome = this.storage.retrieve('userName');
+            }
             this.authenticationSource.next(true);
-//            this.userData = this.storage.retrieve('userData');
         }
     }
-
-
-    public IsAuthorized: boolean;
-
-    
-
 
     public GetToken(): any {
         return this.storage.retrieve('authorizationData');
@@ -53,19 +52,25 @@ export class SecurityService {
         this.IsAuthorized = false;
         this.storage.store('IsAuthorized', false);
 
-        this.storage.store('UserName', '');
-        this.storage.store('UserEmail', '');
+        this.storage.store('userName', '');
+        this.storage.store('userEmail', '');
+        this.UserData.nome = '';
+        this.UserData.email = '';
     }
-    public UserData: any;
-    public SetAuthorizationData(token: any, id_token: any) {
-        if (this.storage.retrieve('authorizationData') !== '') {
-            this.storage.store('authorizationData', '');
-        }
+    public UserData: Usuario;
+
+    public SetAuthorizationData(token: any, id_token: any, usuario: Usuario) {
 
         this.storage.store('authorizationData', token);
         this.storage.store('authorizationDataIdToken', id_token);
         this.IsAuthorized = true;
         this.storage.store('IsAuthorized', true);
+
+        this.storage.store('userName', usuario.nome);
+        this.storage.store('userEmail', usuario.email);
+        this.UserData = usuario;
+        // emit observable
+        this.authenticationSource.next(true);
 
 /*        this.getUserData()
             .subscribe(data => {
@@ -81,7 +86,8 @@ export class SecurityService {
             });
 */
     }
-    public Authorize() {
+    public Authorize(usuario: Usuario) {
+    
         this.ResetAuthorizationData();
 
         const authorizationUrl = this.authorityUrl + '/connect/authorize';
@@ -105,7 +111,7 @@ export class SecurityService {
 
         console.log('AuthorizedCallback state and nonce validated, returning access token');
 
-        this.SetAuthorizationData("1", "1");
+        this.SetAuthorizationData("1", "1", usuario);
     }
 
 

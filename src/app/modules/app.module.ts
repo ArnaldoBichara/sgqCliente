@@ -24,7 +24,6 @@ import { ProblemaDetalhesComponent } from './problema/problemadetalhes/problemad
 // Services
 import { HttpService } from './shared/services/http.service';
 import { SecurityService } from './shared/services/security.service';
-import { ConfigurationService } from './shared/services/configuration.service';
 import { StorageService } from './shared/services/storage.service';
 
 
@@ -61,7 +60,6 @@ import { StorageService } from './shared/services/storage.service';
   providers: [
     HttpService,
     SecurityService,
-    ConfigurationService,
     StorageService
   ],
   bootstrap: [AppComponent]

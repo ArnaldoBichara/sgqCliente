@@ -45,8 +45,8 @@ export class IdentityComponent implements OnInit {
 
     login() {
         this.submitted = true;
-        this.storeService.StoreUser(this.Usuario);
-        this.secService.Authorize();
+        this.secService.Authorize(this.Usuario);
+        this.gotoHome();
       }
       
       gotoHome() {
