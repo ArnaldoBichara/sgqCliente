@@ -1,5 +1,5 @@
 export class CadProblema {
-    Codigo: string;
-    Descricao: string;
-    Acoes_Corretivas: string;
+    codigo: string;
+    descricao: string;
+    acoes_Corretivas: string;
 }

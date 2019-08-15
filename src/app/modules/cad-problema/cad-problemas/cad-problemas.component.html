@@ -13,9 +13,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let cadProblema of cadProblemas | async">
-          <td>{{cadProblema.Codigo}}</td>
-          <td>{{cadProblema.Descricao}}</td>
-          <td><button (click)="cadProblema(cadProblema.Codigo)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          <td>{{cadProblema.codigo}}</td>
+          <td>{{cadProblema.descricao}}</td>
+          <td><button (click)="cadProblema(cadProblema.codigo)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
           </td>
         </tr>
       </tbody>

@@ -8,7 +8,7 @@ import { HttpService} from '../shared/services/http.service';
 })
 export class CadProblemasService {
 
-  private baseUrl = 'http://localhost:5109/api/v1/CadProblema';
+  private baseUrl = 'http://localhost:5109/api/v1/Problemas/CadProblema';
 
   constructor(private http: HttpClient, private httpData: HttpService) { }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { CadProblemasService } from '../cad-problemas.service';
@@ -26,3 +26,4 @@ export class CadProblemasComponent implements OnInit {
     this.router.navigate(['detalhesCadProblema', codigo]);
   }
 }
+*/

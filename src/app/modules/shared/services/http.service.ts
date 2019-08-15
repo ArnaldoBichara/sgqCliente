@@ -15,7 +15,7 @@ export class HttpService {
 
     get(url: string, params?: any): Observable<Response> {
         let options = { };
-        this.setHeaders(options);
+//        this.setHeaders(options);
         
         return this.http.get(url, options)
             .pipe(
@@ -45,7 +45,7 @@ export class HttpService {
 
     private doPost(url: string, data: any, needId: boolean, params?: any): Observable<Response> {
         let options = { };
-        this.setHeaders(options, needId);
+//        this.setHeaders(options, needId);
 
         return this.http.post(url, data, options)
             .pipe(
@@ -58,7 +58,7 @@ export class HttpService {
     
     delete(url: string, params?: any) {
         let options = { };
-        this.setHeaders(options);
+//        this.setHeaders(options);
 
         console.log('data.service deleting');
 
@@ -86,7 +86,7 @@ export class HttpService {
 
     private doPut(url: string, data: any, needId: boolean, params?: any): Observable<Response> {
         let options = { };
-        this.setHeaders(options, needId);
+//        this.setHeaders(options, needId);
        
         return this.http.put(url, data, options)
             .pipe(

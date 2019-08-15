@@ -3,17 +3,17 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Código</label>
-      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="cadProblema.Codigo" name="Codigo">
+      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="cadProblema.codigo" name="Codigo">
     </div>
 
     <div class="form-group">
       <label for="name">Descrição</label>
-      <input type="text" class="form-control" id="Descricao" required [(ngModel)]="cadProblema.Descricao" name="Descricao">
+      <input type="text" class="form-control" id="Descricao" required [(ngModel)]="cadProblema.Descricao" name="descricao">
     </div>
 
     <div class="form-group">
       <label for="name">Ações Corretivas</label>
-      <input type="text" class="form-control" id="Acoes_Corretivas" required [(ngModel)]="cadProblema.Acoes_Corretivas" name="Acoes_Corretivas">
+      <input type="text" class="form-control" id="Acoes_Corretivas" required [(ngModel)]="cadProblema.acoes_Corretivas" name="Acoes_Corretivas">
     </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { CadProblema } from '../cad-problema.model';
@@ -32,4 +32,4 @@ export class CadProblemaDetalhesComponent implements OnInit {
   list(){
     this.router.navigate(['cadProblemas']);
   }
-}
+}*/

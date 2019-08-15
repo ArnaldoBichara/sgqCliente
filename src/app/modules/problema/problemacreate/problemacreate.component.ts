@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CadProblemasService } from '../cad-problemas.service';
 import { CadProblema } from '../cad-problema.model';
@@ -39,3 +39,4 @@ export class CadProblemaCreateComponent implements OnInit {
     this.router.navigate(['/cadProblemas']);
   }
 }
+*/
