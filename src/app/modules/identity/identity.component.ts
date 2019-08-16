@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SecurityService } from '../shared/services/security.service';
-import { StorageService } from '../shared/services/storage.service';
-import { Usuario } from '../shared/models/usuario.model';
+import { SecurityService } from '../shared/security.service';
+import { StorageService } from '../shared/storage.service';
+import { Usuario } from '../shared/usuario.model';
 import { Router } from '@angular/router';
 
 @Component({

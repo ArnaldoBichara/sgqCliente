@@ -13,18 +13,18 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
 import { IdentityComponent } from './identity/identity.component';
-import { CadProblemasComponent } from './cad-problema/cad-problemas/cad-problemas.component';
-import { CadProblemaCreateComponent } from './cad-problema/cad-problema-create/cad-problema-create.component';
-import { CadProblemaDetalhesComponent } from './cad-problema/cad-problema-detalhes/cad-problema-detalhes.component';
-import { ProblemaComponent } from './problema/problemas/problema.component';
-import { ProblemaCreateComponent } from './problema/problemacreate/problemacreate.component';
-import { ProblemaDetalhesComponent } from './problema/problemadetalhes/problemadetalhes.component';
-//import { RegisterComponent } from './register/register.component';
+import { CadProblemasComponent } from './cad-problemas/cad-problemas.component';
+import { CadProblemaCreateComponent } from './cad-problema-create/cad-problema-create.component';
+import { CadProblemaDetalhesComponent } from './cad-problema-detalhes/cad-problema-detalhes.component';
+import { ProblemaComponent } from './problemas/problema.component';
+import { ProblemaCreateComponent } from './problemacreate/problemacreate.component';
+import { ProblemaDetalhesComponent } from './problemadetalhes/problemadetalhes.component';
+// import { RegisterComponent } from './register/register.component';
 
 // Services
-import { HttpService } from './shared/services/http.service';
-import { SecurityService } from './shared/services/security.service';
-import { StorageService } from './shared/services/storage.service';
+import { HttpService } from './shared/http.service';
+import { SecurityService } from './shared/security.service';
+import { StorageService } from './shared/storage.service';
 
 
 

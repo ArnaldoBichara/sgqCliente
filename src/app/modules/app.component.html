@@ -5,7 +5,7 @@
       <a routerLink="login" class="nav-link" routerLinkActive="active">Login</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated"> 
-    <a class="nav-link" routerLinkActive="active">{{userName}}</a>
+    <a class="nav-link" routerLinkActive="active">Usuário: {{userName}}</a>
 </li>
 <li class="nav-item" *ngIf="Authenticated">
         <a routerLink="CadProblemas" class="nav-link" routerLinkActive="active">Problemas Cadastrados</a>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HttpService} from '../shared/services/http.service';
+import { HttpService} from '../shared/http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +13,16 @@ export class CadProblemasService {
   constructor(private http: HttpClient, private httpData: HttpService) { }
 
 
-  getCadProblema(Codigo: string): Observable<any> {
-    return this.httpData.get(`${this.baseUrl}/${Codigo}`);
+  getCadProblema(codigo: string): Observable<any> {
+    return this.httpData.get(`${this.baseUrl}/${codigo}`);
   }
 
-  createCadProblema(cadProblema: Object): Observable<Object> {
+  createCadProblema(cadProblema: object): Observable<object> {
     return this.httpData.post(`${this.baseUrl}`, cadProblema);
   }
 
-  updateCadProblema(Codigo: string, value: any): Observable<Object> {
-    return this.httpData.put(`${this.baseUrl}/${Codigo}`, value );
+  updateCadProblema(codigo: string, value: any): Observable<object> {
+    return this.httpData.put(`${this.baseUrl}/${codigo}`, value );
   }
 
   getCadProblemas(): Observable<any> {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Problema } from '../problema.model';
-import { ProblemaService } from '../problema.service';
+import { Problema } from '../problemas/problema.model';
+import { ProblemaService } from '../problemas/problema.service';
 
 @Component({
   selector: 'app-problemadetalhes',
@@ -11,7 +11,7 @@ import { ProblemaService } from '../problema.service';
 })
 export class ProblemaDetalhesComponent implements OnInit {
 
-  
+
   id: number;
   problema: Problema;
 
@@ -20,16 +20,16 @@ export class ProblemaDetalhesComponent implements OnInit {
   ngOnInit() {
     this.problema = new Problema();
 
-    this.id = this.route.snapshot.params['id'];
-    
+    this.id = this.route.snapshot.params.id;
+
     this.problemaService.getProblema(this.id)
       .subscribe(data => {
-        console.log(data)
+        console.log(data);
         this.problema = data;
       }, error => console.log(error));
   }
 
-  list(){
+  list() {
     this.router.navigate(['Problemas']);
   }
 }

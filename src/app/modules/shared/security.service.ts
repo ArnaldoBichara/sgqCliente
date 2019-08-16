@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from './storage.service';
-import {Usuario} from '../models/usuario.model';
+import {Usuario} from './usuario.model';
 
 @Injectable()
 export class SecurityService {

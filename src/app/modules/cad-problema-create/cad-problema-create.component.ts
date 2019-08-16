@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CadProblemasService } from '../cad-problemas.service';
-import { CadProblema } from '../cad-problema.model';
+import { CadProblemasService } from '../cad-problemas/cad-problemas.service';
+import { CadProblema } from '../cad-problemas/cad-problema.model';
 
 @Component({
   selector: 'app-cad-problema-create',
@@ -32,7 +32,7 @@ export class CadProblemaCreateComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.save();    
+    this.save();
   }
 
   gotoList() {

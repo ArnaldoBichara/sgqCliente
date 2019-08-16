@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { SecurityService } from './security.service';
-import { Guid } from '../../../guid';
 
 // Implementing a Retry-Circuit breaker policy 
 // is pending to do for the SPA app
@@ -14,9 +13,9 @@ export class HttpService {
     constructor(private http: HttpClient, private securityService: SecurityService) { }
 
     get(url: string, params?: any): Observable<Response> {
-        let options = { };
+        const options = { };
 //        this.setHeaders(options);
-        
+
         return this.http.get(url, options)
             .pipe(
                 // retry(3), // retry a failed request up to 3 times
@@ -44,7 +43,7 @@ export class HttpService {
     }
 
     private doPost(url: string, data: any, needId: boolean, params?: any): Observable<Response> {
-        let options = { };
+        const options = { };
 //        this.setHeaders(options, needId);
 
         return this.http.post(url, data, options)
@@ -55,9 +54,8 @@ export class HttpService {
                 catchError(this.handleError)
             );
     }
-    
     delete(url: string, params?: any) {
-        let options = { };
+        const options = { };
 //        this.setHeaders(options);
 
         console.log('data.service deleting');
@@ -85,9 +83,8 @@ export class HttpService {
     }
 
     private doPut(url: string, data: any, needId: boolean, params?: any): Observable<Response> {
-        let options = { };
+        const options = { };
 //        this.setHeaders(options, needId);
-       
         return this.http.put(url, data, options)
             .pipe(
                 map((res: Response) => {
@@ -96,16 +93,16 @@ export class HttpService {
                 catchError(this.handleError)
             );
     }
-
+/*
     private setHeaders(options: any, needId?: boolean){
-        if (needId && this.securityService) {            
-            options["headers"] = new HttpHeaders()
+        if (needId && this.securityService) {
+            options.headers = new HttpHeaders()
                 .append('authorization', 'Bearer ' + this.securityService.GetToken())
                 .append('x-requestid', Guid.newGuid());
-        }
-        else if (this.securityService) {            
-            options["headers"] = new HttpHeaders()
+        } else if (this.securityService) {
+            options.headers = new HttpHeaders()
                 .append('authorization', 'Bearer ' + this.securityService.GetToken());
         }
     }
+*/
 }
