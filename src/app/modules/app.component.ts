@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'SGQ Arnaldo Almeida';
+  // tslint:disable-next-line: variable-name
   Authenticated = false;
   subscription: Subscription;
 

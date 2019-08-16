@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+
 import { SecurityService } from '../shared/security.service';
 import { ProblemaService } from '../problemas/problema.service';
 import { Problema } from '../problemas/problema.model';
@@ -14,7 +14,7 @@ import { CadProblemasService } from '../cad-problemas/cad-problemas.service';
 })
 export class ProblemaCreateComponent implements OnInit {
 
-  cadProblemasList: Observable<CadProblema[]>;
+  cadProblemas: CadProblema[];
   cadProblemaCodigo: string;
 
   problema = new Problema();
@@ -24,12 +24,18 @@ export class ProblemaCreateComponent implements OnInit {
               private router: Router, private secService: SecurityService,
               private cadProblemasService: CadProblemasService) {}
 
-  selectCadProblema() {
-    alert(this.cadProblemaCodigo);
-  }
   ngOnInit() {
     this.problema.quemReportou = this.secService.UserData.nome;
-    this.cadProblemasList = this.cadProblemasService.getCadProblemas();
+    this.getCadProblemas();
+  }
+
+  getCadProblemas() {
+    this.cadProblemasService.getCadProblemas().subscribe (
+      dados => { this.cadProblemas = dados;  });
+  }
+  selectCadProblema() {
+    this.problema.codigo = this.cadProblemaCodigo;
+    this.problema.descricao = this.cadProblemas[this.cadProblemaCodigo].descricao;
   }
 
   newProblema(): void {

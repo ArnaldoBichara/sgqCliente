@@ -30,6 +30,6 @@ export class ProblemaDetalhesComponent implements OnInit {
   }
 
   list() {
-    this.router.navigate(['Problemas']);
+    this.router.navigate(['problemas']);
   }
 }
