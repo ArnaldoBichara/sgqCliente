@@ -1,14 +1,14 @@
-<h3>Cria Problema</h3>
+<h3>Registro de Problema</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Id</label>
-      <input type="text" class="form-control" id="Id" required [(ngModel)]="Problema.id" name="id">
+      <input type="number" class="form-control" id="Id" required [(ngModel)]="Problema.id" name="id">
     </div>
 
     <div class="form-group">
       <label for="name">Código</label>
-      <input type="text" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
+      <input type="number" class="form-control" id="Codigo" required [(ngModel)]="Problema.codigo" name="codigo">
     </div>
 
     <div class="form-group">
@@ -22,10 +22,14 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Data de Início</label>
-      <input type="text" class="form-control" id="DataInicio" required [(ngModel)]="Problema.dataInicio" name="dataInicio">
+      <label for="name">DataHora de Início</label>
+      <input type="datetime-local" class="form-control" id="DataInicio" required [(ngModel)]="Problema.dataInicio" name="dataInicio">
     </div>
 
+    <div class="form-group">
+        <label for="name">DataHora de Fim</label>
+        <input type="datetime-local" class="form-control" id="DataFim" [(ngModel)]="Problema.dataFim" name="dataInicio">
+    </div>
     <div class="form-group">
       <label for="name">Local</label>
       <input type="text" class="form-control" id="Local" required [(ngModel)]="Problema.local" name="local">
@@ -36,14 +40,16 @@
       <input type="text" class="form-control" id="Turno" required [(ngModel)]="Problema.turno" name="turno">
     </div>
     <div class="form-group">
-      <label for="name">Reportado Por</label> {{Problema.quemReportou}}
+      <label for="name">Reportado Por</label> 
+      <div class="form-control"> {{Problema.quemReportou}} </div>
     </div>
     <div class="form-group">
-      <label for="name">Estado</label> {{'Aberto'}}
+        <label for="name">Estado</label> 
+        <input type="text" class="form-control" id="Estado" required [(ngModel)]="Problema.estado" name="Estado">
     </div>
     <div class="form-group">
-      <label for="name">Não Conformidade </label>
-      <input type="text" class="form-control" id="NaoConformidade" required [(ngModel)]="Problema.naoConformidade" name="naoConformidade">
+      <label for="name">Não Conformidade (se ocorreu)</label>
+      <input type="text" class="form-control" id="NaoConformidade" [(ngModel)]="Problema.naoConformidade" name="naoConformidade">
     </div>
 
     <div class="form-group">
@@ -58,10 +64,14 @@
 
     <div class="form-group">
       <label for="name">Ações Executadas</label>
-      <input type="text" class="form-control" id="acoesExecutadas" required [(ngModel)]="Problema.acoesExecutadas" name="acoesExecutadas">
+      <input type="text" class="form-control" id="acoesExecutadas" [(ngModel)]="Problema.acoesExecutadas" name="acoesExecutadas">
     </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>
   </form>
 </div>
 
+<div [hidden]="!submitted">
+    <h4>Registro de Problema com sucesso!</h4>
+    <button class="btn btn-success" (click)="newProblema()">Add</button>
+  </div>
