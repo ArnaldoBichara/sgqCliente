@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpModule, JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -52,11 +51,9 @@ import { StorageService } from './shared/storage.service';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    NgbModule,
+    NgbModule
     // tslint:disable-next-line: deprecation
-    HttpModule,
     // tslint:disable-next-line: deprecation
-    JsonpModule
   ],
   providers: [
     HttpService,

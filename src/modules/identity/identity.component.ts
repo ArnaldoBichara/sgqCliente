@@ -14,9 +14,9 @@ export class IdentityComponent implements OnInit {
 
     authenticated = false;
     private subscription: Subscription;
-    Usuario: Usuario = new Usuario();
+    usuario: Usuario = new Usuario();
     submitted = false;
-  
+
     constructor(private secService: SecurityService, private storeService: StorageService, private router: Router) {
 
     }
@@ -27,8 +27,8 @@ export class IdentityComponent implements OnInit {
 
         if (this.authenticated) {
             if (this.secService.UserData) {
-                this.Usuario.nome = this.secService.UserData.nome;
-                this.Usuario.email = this.secService.UserData.email;
+                this.usuario.nome = this.secService.UserData.nome;
+                this.usuario.email = this.secService.UserData.email;
             }
         }
     }
@@ -45,10 +45,10 @@ export class IdentityComponent implements OnInit {
 
     login() {
         this.submitted = true;
-        this.secService.Authorize(this.Usuario);
+        this.secService.Authorize(this.usuario);
         this.gotoHome();
       }
-      
+
       gotoHome() {
         this.router.navigate(['/']);
       }

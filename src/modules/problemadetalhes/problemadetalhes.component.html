@@ -1,48 +1,48 @@
 <h2>Detalhes do Problema</h2> 
 
 <hr/>
-<div *ngIf="Problema">
+<div *ngIf="problema">
   <div>
-    <label><b>Id: </b></label> {{Problema.id}}
+    <label><b>Id: </b></label> {{problema.id}}
   </div>
   <div>
-    <label><b>Código: </b></label> {{Problema.codigo}}
+    <label><b>Código: </b></label> {{problema.codigo}}
   </div>
   <div>
-    <label><b>Descrição: </b></label> {{Problema.descricao}}
+    <label><b>Descrição: </b></label> {{problema.descricao}}
   </div>
   <div>
-    <label><b>Ações Corretivas: </b></label> {{Problema.acoes_Corretivas}}
+    <label><b>Ações Corretivas: </b></label> {{problema.acoes_Corretivas}}
   </div>  
   <div>
-    <label><b>Data de Início: </b></label> {{Problema.dataInicio}}
+    <label><b>Data de Início: </b></label> {{problema.dataInicio}}
   </div>
   <div>
-    <label><b>Local: </b></label> {{Problema.local}}
+    <label><b>Local: </b></label> {{problema.local}}
   </div>  
   <div>
-    <label><b>Turno: </b></label> {{Problema.turno}}
+    <label><b>Turno: </b></label> {{problema.turno}}
   </div>
   <div>
-    <label><b>Reportado Por: </b></label> {{Problema.reportadoPor}}
+      <label><b>Reportado Por: </b></label> {{problema.quemReportou}}
   </div>
   <div>
-    <label><b>Data Final: </b></label> {{Problema.dataFim}}
+    <label><b>Data Final: </b></label> {{problema.dataFim}}
   </div>  
   <div>
-    <label><b>Estado: </b></label> {{Problema.estado}}
+    <label><b>Estado: </b></label> {{problema.estado}}
   </div>
   <div>
-    <label><b>Não Conformidade: </b></label> {{Problema.naoConformidade}}
+    <label><b>Não Conformidade: </b></label> {{problema.naoConformidade}}
   </div>
   <div>
-    <label><b>Id do Produto / Processo: </b></label> {{Problema.idProdutoProcesso}}
+    <label><b>Id do Produto / Processo: </b></label> {{problema.idProdutoProcesso}}
   </div>  
   <div>
-    <label><b>Nome do Produto / Processo: </b></label> {{Problema.nomeProdutoProcesso}}
+    <label><b>Nome do Produto / Processo: </b></label> {{problema.nomeProdutoProcesso}}
   </div>  
   <div>
-    <label><b>Ações Executadas: </b></label> {{Problema.acoesExecutadas}}
+    <label><b>Ações Executadas: </b></label> {{problema.acoes_Executadas}}
   </div>  
   <table class="table table-striped">
     <thead>
@@ -53,7 +53,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let comentario of Problema.Comentarios | async">
+      <tr *ngFor="let comentario of problema.comentarios">
         <td>{{comentario.Data}}</td>
         <td>{{comentario.userLogin}}</td>
         <td>{{comentario.Texto}}</td>
@@ -63,4 +63,4 @@
 </div>
 <br>
 <br>
-<button (click)="list()" class="btn btn-primary">Voltar à lista de Problemas</button><br>
+<button (click)="list()" class="btn btn-primary">Voltar à lista de problemas</button><br>

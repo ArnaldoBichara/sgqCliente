@@ -13,11 +13,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let Problema of Problemas | async">
+        <tr *ngFor="let problema of problemas | async">
           <td>{{problema.id}}</td>
           <td>{{problema.codigo}}</td>
           <td>{{problema.descricao}}</td>
-          <td><button (click)="problema(problema.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          <td><button (click)="problemaDetalhes(problema.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
           </td>
         </tr>
       </tbody>

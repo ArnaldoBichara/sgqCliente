@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
-import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from './storage.service';
@@ -11,20 +9,20 @@ import {Usuario} from './usuario.model';
 export class SecurityService {
 
     private actionUrl: string;
-    private headers: Headers;
+//    private headers: Headers;
     private storage: StorageService;
     private authenticationSource = new Subject<boolean>();
     authenticationChallenge$ = this.authenticationSource.asObservable();
     private authorityUrl = '';
     public IsAuthorized: boolean;
-    
-    constructor(private http: Http, private router: Router, private route: ActivatedRoute, private storageService: StorageService) {
+
+    constructor(/*private http: Http,*/ private router: Router, private route: ActivatedRoute, private storageService: StorageService) {
         // tslint:disable-next-line: deprecation
-        this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Accept', 'application/json');
+//        this.headers = new Headers();
+//        this.headers.append('Content-Type', 'application/json');
+//        this.headers.append('Accept', 'application/json');
         this.storage = storageService;
-        this.UserData = new Usuario;
+        this.UserData = new Usuario();
 
 /*        this.configurationService.settingsLoaded$.subscribe(() => {
             this.authorityUrl = this.configurationService.serverSettings.identityUrl;
@@ -33,7 +31,7 @@ export class SecurityService {
 */
         if (this.storage.retrieve('IsAuthorized') !== '') {
             this.IsAuthorized = this.storage.retrieve('IsAuthorized');
-            if (this.IsAuthorized == true) {
+            if (this.IsAuthorized === true) {
                 this.UserData.email = this.storage.retrieve('userEmail');
                 this.UserData.nome = this.storage.retrieve('userName');
             }
@@ -87,7 +85,7 @@ export class SecurityService {
 */
     }
     public Authorize(usuario: Usuario) {
-    
+
         this.ResetAuthorizationData();
 
         const authorizationUrl = this.authorityUrl + '/connect/authorize';
@@ -111,7 +109,7 @@ export class SecurityService {
 
         console.log('AuthorizedCallback state and nonce validated, returning access token');
 
-        this.SetAuthorizationData("1", "1", usuario);
+        this.SetAuthorizationData('1', '1', usuario);
     }
 
 
