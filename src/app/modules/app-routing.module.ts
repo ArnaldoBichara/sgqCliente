@@ -9,7 +9,7 @@ import { ProblemaComponent } from './problemas/problema.component';
 import { ProblemaCreateComponent } from './problemacreate/problemacreate.component';
 import { ProblemaDetalhesComponent } from './problemadetalhes/problemadetalhes.component';
 import { IdentityComponent } from './identity/identity.component';
-// import { RegisterComponent } from './register/register.component';
+import { CadAtivsComponent } from './cad-ativs/cad-ativs.component';
 
 
 export const routes: Routes = [
@@ -21,6 +21,7 @@ export const routes: Routes = [
   { path: 'problemas', component: ProblemaComponent },
   { path: 'detalhesProblema/:id', component: ProblemaDetalhesComponent },
   { path: 'addProblema', component: ProblemaCreateComponent },
+  { path: 'cadAtivs', component: CadAtivsComponent },
   { path: 'login', component: IdentityComponent },
  // { path: '**', redirectTo: 'Home' }
 ];

@@ -19,7 +19,7 @@ import { CadProblemaDetalhesComponent } from './cad-problema-detalhes/cad-proble
 import { ProblemaComponent } from './problemas/problema.component';
 import { ProblemaCreateComponent } from './problemacreate/problemacreate.component';
 import { ProblemaDetalhesComponent } from './problemadetalhes/problemadetalhes.component';
-// import { RegisterComponent } from './register/register.component';
+import { CadAtivsComponent } from './cad-ativs/cad-ativs.component';
 
 // Services
 import { HttpService } from './shared/http.service';
@@ -34,15 +34,15 @@ import { StorageService } from './shared/storage.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    IdentityComponent,  
+    IdentityComponent,
     CadProblemasComponent,
     CadProblemaCreateComponent,
     CadProblemaDetalhesComponent,
     ProblemaComponent,
     ProblemaCreateComponent,
     ProblemaDetalhesComponent,
-    IdentityComponent
-//    RegisterComponent
+    IdentityComponent,
+    CadAtivsComponent
   ],
   imports: [
     BrowserModule,
