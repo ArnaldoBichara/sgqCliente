@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  sgqclient:
+    container_name: sgqclient
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '2828:2828'
