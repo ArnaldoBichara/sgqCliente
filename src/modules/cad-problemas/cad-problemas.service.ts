@@ -8,7 +8,7 @@ import { HttpService} from '../shared/http.service';
 })
 export class CadProblemasService {
 
-  private baseUrl = 'http://localhost:5109/api/v1/Problemas/CadProblema';
+  private baseUrl = 'http://localhost:5202/api/v1/p/CadProblema';
 
   constructor(private http: HttpClient, private httpData: HttpService) { }
 
@@ -26,6 +26,6 @@ export class CadProblemasService {
   }
 
   getCadProblemas(): Observable<any> {
-    return this.httpData.get (`${this.baseUrl}`); // 'https://localhost:5109');
+    return this.httpData.get (`${this.baseUrl}`); 
   }
 }
