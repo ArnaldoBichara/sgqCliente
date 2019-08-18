@@ -14,7 +14,7 @@ export class CadProblemaCreateComponent implements OnInit {
   submitted = false;
 
   constructor(private cadProblemasService: CadProblemasService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit() {
   }

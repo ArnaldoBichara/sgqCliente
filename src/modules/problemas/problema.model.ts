@@ -1,17 +1,20 @@
 export class Problema {
     id: number;
-	codigo: string;
-	descricao: string;
+    codigo: string;
+    descricao: string;
+    // tslint:disable-next-line: variable-name
     acoes_Corretivas: string;
     dataInicio: Date;
     local: string;
     turno: string;
     quemReportou: string;
     dataFim: Date;
-    estado: string;
+    estado: string; // fechado; aberto
     naoConformidade: string;
     idProdutoProcesso: string;
+    tipoProdutoProcesso: string; // produto; processo
     nomeProdutoProcesso: string;
+    // tslint:disable-next-line: variable-name
     acoes_Executadas: string;
     comentarios: [{
         data: Date;

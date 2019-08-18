@@ -26,6 +26,6 @@ export class CadProblemasService {
   }
 
   getCadProblemas(): Observable<any> {
-    return this.httpData.get (`${this.baseUrl}`); 
+    return this.httpData.get (`${this.baseUrl}`);
   }
 }

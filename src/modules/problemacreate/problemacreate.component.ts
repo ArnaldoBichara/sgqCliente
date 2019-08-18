@@ -43,16 +43,15 @@ export class ProblemaCreateComponent implements OnInit {
     this.problema = new Problema();
   }
 
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
   save() {
     this.problemaService.createProblema(this.problema)
       .subscribe(data => console.log(data), error => console.log(error));
     this.problema = new Problema();
     this.gotoList();
-  }
-
-  onSubmit() {
-    this.submitted = true;
-    this.save();
   }
 
   gotoList() {
