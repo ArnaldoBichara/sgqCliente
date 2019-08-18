@@ -1,16 +1,14 @@
-export class Problema {
-    id: number;
+export class Atividade {
 	codigo: string;
-	descricao: string;
-    acoes_Corretivas: string;
-    dataInicio: Date;
-    atribuicao: string; // em branco: não atribuido ainda
-    dataFim: Date;
-    estado: string; // fechado; aberto
-    comentarios: [{
-        data: Date;
-        userLogin: string;
-        texto: string;
+    titulo: string;
+    descricao: string;
+    produtoProcessoAssociados: [{
+        codigo: string;
+        tipo: string;
     }];
-	// Completar isso aqui.
+    usergroup: string;
+    normaPadraoAssociados: [{
+        codigo: string;
+        tipo: string;
+    }];
 }
