@@ -1,14 +1,34 @@
 export class Atividade {
-	codigo: string;
-    titulo: string;
+    id: number;
+    codigo: string;
     descricao: string;
-    produtoProcessoAssociados: [{
-        codigo: string;
-        tipo: string;
-    }];
     usergroup: string;
-    normaPadraoAssociados: [{
-        codigo: string;
+    normaPadrao: {
         tipo: string;
-    }];
+        codigo: string;
+        titulo: string;
+    }
+    produtoProcessoAssociados: {
+        tipo: string;
+        codigo: string;
+        nome: string;
+    }
+    workflowAssociado: {
+        id: string;
+        codigo: string;
+        nome: string;
+    }
+    usuarioAtribuido: string; // em branco: nenhum usuário atribuído
+    estado: string;           // aberto; fechado
+    dataInicio: Date;
+    dataFim: Date;
+    produtoProcessoAnalisados: {
+        tipo: string;
+        codigo: string;
+        nome: string;
+        local: string;
+        situacao: string; // conforme; nao conforme
+        naoConformidade: string;
+        comentario: string;
+    }
 }

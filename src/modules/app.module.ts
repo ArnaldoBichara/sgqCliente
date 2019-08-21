@@ -19,15 +19,18 @@ import { ProblemaComponent } from './problemas/problema.component';
 import { ProblemaCreateComponent } from './problemacreate/problemacreate.component';
 import { ProblemaDetalhesComponent } from './problemadetalhes/problemadetalhes.component';
 import { CadAtivsComponent } from './cad-ativs/cad-ativs.component';
+import { CadAtivCreateComponent } from './cad-ativ-create/cad-ativ-create.component';
+import { CadAtivDetalhesComponent } from './cad-ativ-detalhes/cad-ativ-detalhes.component';
+import { AtividadesComponent } from './atividadeswait/atividadeswait.component';
+import { AtividadeWaitdetalhesComponent } from './atividadewaitdetalhes/atividadewaitdetalhes.component';
+import { AtividadesAtribComponent } from './atividadesatribuidas/atividadesatribuidas.component';
+import { AtividadeAtribDetalhesComponent } from './atividadeatribdetalhes/atividadeatribdetalhes.component';
+import { RegistrarAtividadeComponent } from './atividadereg/regatividade.component';
 
 // Services
 import { HttpService } from './shared/http.service';
 import { SecurityService } from './shared/security.service';
 import { StorageService } from './shared/storage.service';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -41,7 +44,14 @@ import { StorageService } from './shared/storage.service';
     ProblemaCreateComponent,
     ProblemaDetalhesComponent,
     IdentityComponent,
-    CadAtivsComponent
+    CadAtivsComponent,
+    CadAtivCreateComponent,
+    CadAtivDetalhesComponent,
+    AtividadesComponent,
+    AtividadeWaitdetalhesComponent,    
+    AtividadesAtribComponent,
+    AtividadeAtribDetalhesComponent,
+    RegistrarAtividadeComponent
   ],
   imports: [
     BrowserModule,

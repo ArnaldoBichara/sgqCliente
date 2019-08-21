@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2> Atividades em aberto </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Operações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let atividade of atividades | async">
+            <td>{{atividade.codigo}}</td>
+            <td>{{atividade.descricao}}</td>
+            <td>
+                <button (click)="atividadeDetalhes(atividade.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            </td>
+            <td>
+                <button (click)="atividadeAtribuir(atividade.id)" class="btn btn-info" style="margin-left: 10px">Atribuir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

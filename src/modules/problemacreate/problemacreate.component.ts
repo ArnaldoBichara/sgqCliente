@@ -7,11 +7,14 @@ import { Problema } from '../problemas/problema.model';
 import { CadProblema } from '../cad-problemas/cad-problema.model';
 import { CadProblemasService } from '../cad-problemas/cad-problemas.service';
 
+
 @Component({
   selector: 'app-problemacreate',
   templateUrl: './problemacreate.component.html',
   styleUrls: ['./problemacreate.component.scss']
 })
+
+
 export class ProblemaCreateComponent implements OnInit {
 
   cadProblemas: CadProblema[];
@@ -27,6 +30,7 @@ export class ProblemaCreateComponent implements OnInit {
   ngOnInit() {
     this.problema.quemReportou = this.secService.UserData.nome;
     this.getCadProblemas();
+
   }
 
   getCadProblemas() {
@@ -55,6 +59,6 @@ export class ProblemaCreateComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/problemas']);
+    this.router.navigate(['/home']);
   }
 }

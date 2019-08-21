@@ -25,7 +25,7 @@ export class ProblemaService {
     return this.httpData.put(`${this.baseUrl}/${id}`, value );
   }
 
-  getProblemas(): Observable<any> {
-    return this.httpData.get (`${this.baseUrl}`);
+  getProblemasAbertos(): Observable<any> {
+    return this.httpData.get (`${this.baseUrl}/abertos`);
   }
 }

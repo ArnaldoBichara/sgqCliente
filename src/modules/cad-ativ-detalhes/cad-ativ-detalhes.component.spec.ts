@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CadAtivsComponent } from './cad-ativs.component';
+import { CadAtivDetalhesComponent } from './cad-ativ-detalhes.component';
 
-describe('CadAtivComponent', () => {
-  let component: CadAtivsComponent;
-  let fixture: ComponentFixture<CadAtivsComponent>;
+describe('CadAtivDetalhesComponent', () => {
+  let component: CadAtivDetalhesComponent;
+  let fixture: ComponentFixture<CadAtivDetalhesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CadAtivsComponent ]
+      declarations: [ CadAtivDetalhesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CadAtivsComponent);
+    fixture = TestBed.createComponent(CadAtivDetalhesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

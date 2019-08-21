@@ -11,7 +11,6 @@ export class Problema {
     dataFim: Date;
     estado: string; // fechado; aberto
     naoConformidade: string;
-    idProdutoProcesso: string;
     tipoProdutoProcesso: string; // produto; processo
     nomeProdutoProcesso: string;
     // tslint:disable-next-line: variable-name

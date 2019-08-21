@@ -1,0 +1,30 @@
+<h2>Atividade a Atribuir</h2> 
+
+<hr/>
+<div *ngIf="atividade">
+  <div>
+    <label><b>Id: </b></label> {{atividade.id}}
+  </div>
+  <div>
+    <label><b>Código: </b></label> {{atividade.codigo}}
+  </div>
+  <div>
+    <label><b>Descrição: </b></label> {{atividade.descricao}}
+  </div>
+  <div>
+    <label><b>Associado a produto ou processo?: </b></label> {{atividade.produtoProcessoAssociados.tipo}}
+  </div>  
+  <div>
+    <label><b>Código do Produto/Processo: </b></label> {{atividade.produtoProcessoAssociados.codigo}}
+  </div>  
+  <div>
+    <label><b>Nome do Produto/Processo: </b></label> {{atividade.produtoProcessoAssociados.nome}}
+  </div>  
+  <div>
+    <label><b>Data de Início: </b></label> {{atividade.dataInicio}}
+  </div>
+</div>
+<br>
+<br>
+<button (click)="atribuir()" class="btn btn-primary">Atribuir Atividade</button><br>
+<button (click)="list()" class="btn btn-primary">Voltar à lista de atividades</button><br>

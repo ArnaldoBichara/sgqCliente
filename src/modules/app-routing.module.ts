@@ -10,6 +10,12 @@ import { ProblemaCreateComponent } from './problemacreate/problemacreate.compone
 import { ProblemaDetalhesComponent } from './problemadetalhes/problemadetalhes.component';
 import { IdentityComponent } from './identity/identity.component';
 import { CadAtivsComponent } from './cad-ativs/cad-ativs.component';
+import { CadAtivDetalhesComponent } from './cad-ativ-detalhes/cad-ativ-detalhes.component';
+import { CadAtivCreateComponent } from './cad-ativ-create/cad-ativ-create.component';
+import { AtividadesComponent } from './atividadeswait/atividadeswait.component';
+import { AtividadesAtribComponent } from './atividadesatribuidas/atividadesatribuidas.component';
+import { AtividadeAtribDetalhesComponent } from './atividadeatribdetalhes/atividadeatribdetalhes.component';
+import { RegistrarAtividadeComponent } from './atividadereg/regatividade.component';
 
 
 export const routes: Routes = [
@@ -21,7 +27,13 @@ export const routes: Routes = [
   { path: 'problemas', component: ProblemaComponent },
   { path: 'detalhesProblema/:id', component: ProblemaDetalhesComponent },
   { path: 'addProblema', component: ProblemaCreateComponent },
-  { path: 'cadAtivs', component: CadAtivsComponent },
+  { path: 'cadAtividades', component: CadAtivsComponent },
+  { path: 'detalhesCadAtividade/:codigo', component: CadAtivDetalhesComponent },
+  { path: 'addCadAtividade', component: CadAtivCreateComponent },
+  { path: 'atividadeswait', component: AtividadesComponent },
+  { path: 'atividadesatrib', component: AtividadesAtribComponent },
+  { path: 'detalhesAtividadeAtrib', component: AtividadeAtribDetalhesComponent },
+  { path: 'registrarAtividade', component: RegistrarAtividadeComponent },
   { path: 'login', component: IdentityComponent },
  // { path: '**', redirectTo: 'Home' }
 ];

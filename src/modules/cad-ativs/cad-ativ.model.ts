@@ -1,6 +1,5 @@
 export class CadAtividade {
     codigo: string;
-    titulo: string;
     descricao: string;
     usergroup: string;
     normapadrao: {
@@ -8,9 +7,9 @@ export class CadAtividade {
         codigo: string;
         titulo: string;
     };
-    processoproduto: [{
+    produtoProcessoAssociado: {
         tipo: string;
         codigo: string;
         nome: string;
-    }];
+    };
 }

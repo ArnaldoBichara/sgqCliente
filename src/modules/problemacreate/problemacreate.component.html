@@ -2,10 +2,6 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Id</label>
-      <input type="number" class="form-control" id="Id" required [(ngModel)]="problema.id" name="id">
-    </div>
-    <div class="form-group">
       <label for="name">Tipo de Problema</label>
       <select id="codigo" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="cadProblemaCodigo" name="codigo" (change)="selectCadProblema();">  
         <option selected="" value=""></option>  
@@ -18,12 +14,12 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Início do Problema:</label>
-      <input type="datetime-local" class="datepicker" id="DataInicio" required [(ngModel)]="problema.dataInicio" name="dataInicio">
+      <label for="name">Início do Problema: </label>
+      <input type="datetime-local" class="form-control" id="DataInicio" required [(ngModel)]="problema.dataInicio" name="dataInicio">
     </div>
  
     <div class="form-group">
-        <label for="name">Fim do Problema</label>
+        <label for="name">Fim do Problema:  </label>
         <input type="datetime-local" class="form-control" id="DataFim" [(ngModel)]="problema.dataFim" name="dataInicio">
     </div>
     <div class="form-group">

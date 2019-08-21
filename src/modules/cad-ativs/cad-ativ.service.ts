@@ -8,7 +8,7 @@ import { HttpService} from '../shared/http.service';
 })
 export class CadAtivService {
 
-  private baseUrl = 'http://localhost:5109/api/v1/Ativ/CadAtiv';
+  private baseUrl = 'http://localhost:5109/api/v1/w/CadAtiv';
 
   constructor(private http: HttpClient, private httpData: HttpService) { }
 

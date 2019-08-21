@@ -20,7 +20,7 @@ export class ProblemaComponent implements OnInit {
       this.reloadData();
   }
   reloadData() {
-    this.problemas = this.problemaService.getProblemas();
+    this.problemas = this.problemaService.getProblemasAbertos();
   }
   problemaDetalhes(id: number){
     this.router.navigate(['detalhesProblema', id]);
