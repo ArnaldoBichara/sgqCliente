@@ -16,9 +16,9 @@ export class RegistrarAtividadeComponent implements OnInit {
   atividade: Atividade;
 
   constructor(private route: ActivatedRoute,
-    private router: Router,
-    private atividadeService: AtividadeService,
-    private secService: SecurityService) { }
+              private router: Router,
+              private atividadeService: AtividadeService,
+              private secService: SecurityService) { }
 
   ngOnInit() {
     this.atividade = new Atividade();

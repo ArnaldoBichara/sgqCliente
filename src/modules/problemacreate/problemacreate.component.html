@@ -3,14 +3,14 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Tipo de Problema</label>
-      <select id="codigo" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="cadProblemaCodigo" name="codigo" (change)="selectCadProblema();">  
+      <select id="codigo" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="cadProblema" name="codigo" (change)="selectCadProblema();">  
         <option selected="" value=""></option>  
-        <option [ngValue]="cadProblema.codigo" *ngFor="let cadProblema of cadProblemas"> {{cadProblema.descricao}}</option>  
+        <option [ngValue]="cadProblema" *ngFor="let cadProblema of cadProblemas"> {{cadProblema.descricao}}</option>  
       </select> 
     </div>
     <div class="form-group">
-      <label for="name">Ações Corretivas</label>
-      <input type="text" class="form-control" id="Acoes_Corretivas" required [(ngModel)]="problema.acoes_Corretivas" name="acoes_Corretivas">
+      <label>Ações Corretivas:</label>
+      <label class="form-control"> {{cadProblema.acoes_Corretivas}} </label>
     </div>
 
     <div class="form-group">
@@ -36,7 +36,7 @@
       <div class="form-control"> {{problema.quemReportou}} </div>
     </div>
     <div class="form-group">
-        <label for="name">Estado</label> 
+        <label for="name">Estado - aberto ou fechado</label> 
         <input type="text" class="form-control" id="Estado" required [(ngModel)]="problema.estado" name="Estado">
     </div>
     <div class="form-group">
@@ -45,12 +45,17 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Id do Produto / Processo</label>
+      <label for="name">Problema em produto ou processo ?</label>
+      <input type="text" class="form-control" id="tipoProdutoProcesso" required [(ngModel)]="problema.tipoProdutoProcesso" name="tipoProdutoProcesso">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Id do Produto/Processo</label>
       <input type="text" class="form-control" id="IdProdutoProcesso" required [(ngModel)]="problema.idProdutoProcesso" name="idProdutoProcesso">
     </div>
 
     <div class="form-group">
-      <label for="name">Nome do Produto / Processo</label>
+      <label for="name">Nome do Produto/Processo</label>
       <input type="text" class="form-control" id="NomeProdutoProcesso" required [(ngModel)]="problema.nomeProdutoProcesso" name="nomeProdutoProcesso">
     </div>
 

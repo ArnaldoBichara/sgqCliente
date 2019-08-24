@@ -30,6 +30,6 @@ export class CadProblemaDetalhesComponent implements OnInit {
   }
 
   list() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/cadProblemas']);
   }
 }

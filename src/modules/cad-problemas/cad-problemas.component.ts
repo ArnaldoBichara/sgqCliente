@@ -18,6 +18,12 @@ export class CadProblemasComponent implements OnInit {
 
   ngOnInit() {
       this.reloadData();
+
+      this.cadProblemasService.getCadProblemas()
+        .subscribe(
+            data => { console.log(data); },
+            error => console.log(error)
+          );
   }
   reloadData() {
     this.cadProblemas = this.cadProblemasService.getCadProblemas();

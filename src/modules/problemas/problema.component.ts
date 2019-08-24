@@ -18,6 +18,12 @@ export class ProblemaComponent implements OnInit {
 
   ngOnInit() {
       this.reloadData();
+
+      this.problemaService.getProblemasAbertos()
+      .subscribe(
+          data => { console.log(data); },
+          error => console.log(error)
+        );
   }
   reloadData() {
     this.problemas = this.problemaService.getProblemasAbertos();

@@ -18,7 +18,7 @@ import { CadProblemasService } from '../cad-problemas/cad-problemas.service';
 export class ProblemaCreateComponent implements OnInit {
 
   cadProblemas: CadProblema[];
-  cadProblemaCodigo: string;
+  cadProblema: CadProblema;
 
   problema = new Problema();
   submitted = false;
@@ -38,8 +38,8 @@ export class ProblemaCreateComponent implements OnInit {
       dados => { this.cadProblemas = dados;  });
   }
   selectCadProblema() {
-    this.problema.codigo = this.cadProblemaCodigo;
-    this.problema.descricao = this.cadProblemas[this.cadProblemaCodigo].descricao;
+    this.problema.codigo = this.cadProblema.codigo;
+    this.problema.descricao = this.cadProblema.descricao;
   }
 
   newProblema(): void {
@@ -59,6 +59,6 @@ export class ProblemaCreateComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/problemas']);
   }
 }

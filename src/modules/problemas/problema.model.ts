@@ -1,5 +1,5 @@
 export class Problema {
-    id: number;
+    id: string;
     codigo: string;
     descricao: string;
     // tslint:disable-next-line: variable-name

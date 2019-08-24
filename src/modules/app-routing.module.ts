@@ -20,7 +20,7 @@ import { RegistrarAtividadeComponent } from './atividadereg/regatividade.compone
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'Home', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'cadProblemas', component: CadProblemasComponent },
   { path: 'detalhesCadProblema/:codigo', component: CadProblemaDetalhesComponent },
   { path: 'addCadProblema', component: CadProblemaCreateComponent },
@@ -35,7 +35,7 @@ export const routes: Routes = [
   { path: 'detalhesAtividadeAtrib', component: AtividadeAtribDetalhesComponent },
   { path: 'registrarAtividade', component: RegistrarAtividadeComponent },
   { path: 'login', component: IdentityComponent },
- // { path: '**', redirectTo: 'Home' }
+ // { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

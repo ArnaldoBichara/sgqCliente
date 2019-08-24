@@ -15,11 +15,16 @@ export class AtividadesAtribComponent implements OnInit {
   atividades: Observable<Atividade[]>;
 
   constructor(private atividadeservice: AtividadeService,
-             private router: Router,
-             private secService: SecurityService) { }
+              private router: Router,
+              private secService: SecurityService) { }
 
   ngOnInit() {
       this.reloadData();
+      this.atividadeservice.getMinhasAtividades(this.secService.UserData.nome)
+      .subscribe(
+          data => { console.log(data); },
+          error => console.log(error)
+        );
   }
   reloadData() {
     this.atividades = this.atividadeservice.getMinhasAtividades(this.secService.UserData.nome);

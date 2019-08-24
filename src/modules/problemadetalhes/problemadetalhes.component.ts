@@ -12,7 +12,7 @@ import { ProblemaService } from '../problemas/problema.service';
 export class ProblemaDetalhesComponent implements OnInit {
 
 
-  id: number;
+  id: string;
   problema: Problema;
 
   constructor(private route: ActivatedRoute, private router: Router, private problemaService: ProblemaService) { }

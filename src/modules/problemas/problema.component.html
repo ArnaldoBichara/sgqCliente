@@ -6,7 +6,6 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Id</th>
           <th>Código</th>
           <th>Descrição</th>
           <th>Operações</th>
@@ -14,7 +13,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let problema of problemas | async">
-          <td>{{problema.id}}</td>
           <td>{{problema.codigo}}</td>
           <td>{{problema.descricao}}</td>
           <td><button (click)="problemaDetalhes(problema.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>

@@ -17,6 +17,11 @@ export class CadAtivsComponent implements OnInit {
 
     ngOnInit() {
         this.reloadData();
+        this.cadAtivService.getCadAtivs()
+        .subscribe(
+            data => { console.log(data); },
+            error => console.log(error)
+          );
     }
     reloadData() {
       this.cadAtivs = this.cadAtivService.getCadAtivs();

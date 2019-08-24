@@ -13,7 +13,7 @@ export class ProblemaService {
   constructor(private http: HttpClient, private httpData: HttpService) { }
 
 
-  getProblema(id: number): Observable<any> {
+  getProblema(id: string): Observable<any> {
     return this.httpData.get(`${this.baseUrl}/${id}`);
   }
 
@@ -21,7 +21,7 @@ export class ProblemaService {
     return this.httpData.post(`${this.baseUrl}`, problema);
   }
 
-  updateProblema(id: number, value: any): Observable<object> {
+  updateProblema(id: string, value: any): Observable<object> {
     return this.httpData.put(`${this.baseUrl}/${id}`, value );
   }
 

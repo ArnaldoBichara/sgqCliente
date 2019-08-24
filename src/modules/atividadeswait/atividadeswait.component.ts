@@ -20,6 +20,11 @@ export class AtividadesComponent implements OnInit {
 
   ngOnInit() {
       this.reloadData();
+      this.atividadeService.getAtividadesWaiting()
+      .subscribe(
+          data => { console.log(data); },
+          error => console.log(error)
+        );
   }
   reloadData() {
     this.atividades = this.atividadeService.getAtividadesWaiting();
@@ -28,8 +33,8 @@ export class AtividadesComponent implements OnInit {
     this.router.navigate(['detalhesAtividadeWait', id]);
   }
   atividadeAtribuir(id: number){
-    var atividade = new Atividade();
-    
+    let atividade = new Atividade();
+
     this.atividadeService.getAtividade(id)
       .subscribe(data => { console.log(data); atividade = data; },
                  error => console.log(error));
@@ -37,11 +42,11 @@ export class AtividadesComponent implements OnInit {
     atividade.usuarioAtribuido = this.secService.UserData.nome;
 
     this.atividadeService.updateAtividade(id, atividade)
-        .subscribe(data => console.log(data), 
+        .subscribe(data => console.log(data),
                    error => console.log(error));
     this.list();
  }
- 
+
  list() {
   this.router.navigate(['/atividadeswait']);
   }
