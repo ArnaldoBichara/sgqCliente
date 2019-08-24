@@ -14,7 +14,7 @@
         <tr *ngFor="let cadAtiv of cadAtivs | async">
           <td>{{cadAtiv.codigo}}</td>
           <td>{{cadAtiv.descricao}}</td>
-          <td><button (click)="cadAtivsDetalhes(cadAtiv.codigo)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          <td><button (click)="cadAtivDetalhes(cadAtiv.codigo)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
          </td>
         </tr>
       </tbody>

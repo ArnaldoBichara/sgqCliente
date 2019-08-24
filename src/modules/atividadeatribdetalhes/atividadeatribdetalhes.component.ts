@@ -13,7 +13,7 @@ import { AtividadeService } from '../atividade/atividade.service';
 export class AtividadeAtribDetalhesComponent implements OnInit {
 
 
-  id: number;
+  id: string;
   atividade: Atividade;
 
   constructor(private route: ActivatedRoute,
@@ -33,7 +33,7 @@ export class AtividadeAtribDetalhesComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  registrarAtividade(id: number){
+  registrarAtividade(id: number) {
     this.router.navigate(['registrarAtividade', id]);
   }
 

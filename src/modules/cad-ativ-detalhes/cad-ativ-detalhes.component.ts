@@ -26,8 +26,8 @@ export class CadAtivDetalhesComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.cadAtividade = data;
-        if (this.cadAtividade.normapadrao.tipo=='norma') {this.isNorma=true;}
-        if (this.cadAtividade.produtoProcessoAssociado.tipo=='processo') {this.isProcesso=true;}
+        if (this.cadAtividade.normaPadraoAssociada.tipo === 'norma') {this.isNorma = true; }
+        if (this.cadAtividade.produtoProcessoAssociado.tipo === 'processo') {this.isProcesso = true; }
       }, error => console.log(error));
 
   }

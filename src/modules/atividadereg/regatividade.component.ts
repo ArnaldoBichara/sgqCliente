@@ -12,7 +12,7 @@ import { Atividade } from '../atividade/atividade.model';
 })
 export class RegistrarAtividadeComponent implements OnInit {
 
-  id: number;
+  id: string;
   atividade: Atividade;
 
   constructor(private route: ActivatedRoute,
@@ -35,7 +35,7 @@ export class RegistrarAtividadeComponent implements OnInit {
     this.save();
   }
   save() {
-    this.atividade.estado='completada';
+    this.atividade.estado = 'completada';
     this.atividadeService.updateAtividade(this.id, this.atividade)
       .subscribe(data => console.log(data), error => console.log(error));
     this.gotoList();

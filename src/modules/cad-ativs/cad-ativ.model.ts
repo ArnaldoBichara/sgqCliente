@@ -2,7 +2,7 @@ export class CadAtividade {
     codigo: string;
     descricao: string;
     usergroup: string;
-    normapadrao: {
+    normaPadraoAssociada: {
         tipo: string;
         codigo: string;
         titulo: string;

@@ -1,5 +1,5 @@
 export class Atividade {
-    id: number;
+    id: string;
     codigo: string;
     descricao: string;
     usergroup: string;
@@ -7,17 +7,17 @@ export class Atividade {
         tipo: string;
         codigo: string;
         titulo: string;
-    }
+    };
     produtoProcessoAssociados: {
         tipo: string;
         codigo: string;
         nome: string;
-    }
+    };
     workflowAssociado: {
         id: string;
         codigo: string;
         nome: string;
-    }
+    };
     usuarioAtribuido: string; // em branco: nenhum usuário atribuído
     estado: string;           // aberto; fechado
     dataInicio: Date;
@@ -30,5 +30,5 @@ export class Atividade {
         situacao: string; // conforme; nao conforme
         naoConformidade: string;
         comentario: string;
-    }
+    };
 }

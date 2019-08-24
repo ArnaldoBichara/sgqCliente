@@ -8,6 +8,7 @@
         <tr>
           <th>Código</th>
           <th>Descrição</th>
+          <th>Id</th>
           <th>Operações</th>
         </tr>
       </thead>
@@ -15,6 +16,7 @@
         <tr *ngFor="let problema of problemas | async">
           <td>{{problema.codigo}}</td>
           <td>{{problema.descricao}}</td>
+          <td>{{problema.id}}</td>
           <td><button (click)="problemaDetalhes(problema.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
           </td>
         </tr>

@@ -14,11 +14,16 @@
     <a routerLink="addProblema" class="nav-link" routerLinkActive="active">Registrar Problema</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated">
-    <a routerLink="problemas" class="nav-link" routerLinkActive="active">Problemas Abertos</a>
-  </li>
-  <li class="nav-item" *ngIf="Authenticated">
       <a routerLink="home" class="nav-link" routerLinkActive="active">Ajuda</a>
   </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <!-- Links -->
+    <li class="nav-item" *ngIf="Authenticated">
+      <a routerLink="problemas" class="nav-link" routerLinkActive="active">Problemas Em Aberto</a>
+    </li>
   </ul>
 </nav>
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">

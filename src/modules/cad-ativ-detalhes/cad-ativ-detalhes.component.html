@@ -6,38 +6,39 @@
     <label><b>Código: </b></label> {{cadAtividade.codigo}}
   </div>
   <div>
-    <label><b>Título: </b></label> {{cadAtividade.titulo}}
-  </div>
-  <div>
     <label><b>Descrição: </b></label> {{cadAtividade.descricao}}
   </div>  
   <div>
     <label><b>Usergroup Associado: </b></label> {{cadAtividade.usergroup}}
   </div>  
-  <div *ngIf="isNorma">
-    <label><b>Padrão Associado: </b></label>
-  </div>
-  <div *ngIf="!isNorma">
-    <label><b>Norma Associada: </b></label>
-  </div>
   <div>
-    <label><b>Código: </b></label> {{cadAtividade.normapadrao.codigo}}
-  </div>  
-  <div>
-      <label><b>Título: </b></label> {{cadAtividade.normapadrao.titulo}}
-  </div>  
-  <div *ngIf="isProcesso">
-    <label><b>Processo Associado: </b></label>
-  </div>
-  <div *ngIf="!isProcesso">
-    <label><b>Produto Associado: </b></label>
+    <div *ngIf="isNorma">
+      <h5>Padrao Associado:</h5> 
+    </div>
+    <div *ngIf="!isNorma">
+      <h5>Norma Associada:</h5> 
+    </div>
+    <div>
+      <label><b>Código: </b></label> {{cadAtividade.normaPadraoAssociada.codigo}}
+    </div>  
+    <div>
+        <label><b>Título: </b></label> {{cadAtividade.normaPadraoAssociada.titulo}}
+    </div>  
   </div>
   <div>
-    <label><b>Código: </b></label> {{cadAtividade.produtoprocesso.codigo}}
-  </div>  
-  <div>
-    <label><b>Título: </b></label> {{cadAtividade.produtoprocesso.titulo}}
-  </div>  
+    <div *ngIf="isProcesso">
+      <h5>Processo Associado: </h5>
+    </div>
+    <div *ngIf="!isProcesso">
+      <h5>Produto Associado: </h5>
+    </div>
+    <div>
+      <label><b>Código: </b></label> {{cadAtividade.produtoProcessoAssociado.codigo}}
+    </div>  
+    <div>
+      <label><b>Título: </b></label> {{cadAtividade.produtoProcessoAssociado.nome}}
+    </div>  
+  </div>
 <br>
 <br>
 <button (click)="list()" class="btn btn-primary">Voltar à lista de Atividades Cadastradas</button><br>

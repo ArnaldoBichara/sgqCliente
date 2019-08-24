@@ -27,6 +27,6 @@ export class CadAtivsComponent implements OnInit {
       this.cadAtivs = this.cadAtivService.getCadAtivs();
     }
     cadAtivDetalhes(codigo: string) {
-      this.router.navigate(['detalhesCadAtiv', codigo]);
+      this.router.navigate(['detalhesCadAtividade', codigo]);
     }
   }

@@ -29,10 +29,10 @@ export class AtividadesComponent implements OnInit {
   reloadData() {
     this.atividades = this.atividadeService.getAtividadesWaiting();
   }
-  atividadeDetalhes(id: number){
+  atividadeDetalhes(id: string) {
     this.router.navigate(['detalhesAtividadeWait', id]);
   }
-  atividadeAtribuir(id: number){
+  atividadeAtribuir(id: string) {
     let atividade = new Atividade();
 
     this.atividadeService.getAtividade(id)

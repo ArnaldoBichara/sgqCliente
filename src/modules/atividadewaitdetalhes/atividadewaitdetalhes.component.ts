@@ -13,7 +13,7 @@ import { AtividadeService } from '../atividade/atividade.service';
 export class AtividadeWaitdetalhesComponent implements OnInit {
 
 
-  id: number;
+  id: string;
   atividade: Atividade;
 
   constructor(private route: ActivatedRoute,
@@ -39,7 +39,7 @@ export class AtividadeWaitdetalhesComponent implements OnInit {
         .subscribe(data => console.log(data), error => console.log(error));
       this.atividade = new Atividade();
       this.list();
-  }    
+  }
 
   list() {
     this.router.navigate(['/atividadeswait']);

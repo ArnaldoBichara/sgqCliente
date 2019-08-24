@@ -12,7 +12,7 @@ export class AtividadeService {
 
   constructor(private http: HttpClient, private httpData: HttpService) { }
 
-  getAtividade(id: number): Observable<any> {
+  getAtividade(id: string): Observable<any> {
     return this.httpData.get(`${this.baseUrl}/${id}`);
   }
 
@@ -20,7 +20,7 @@ export class AtividadeService {
     return this.httpData.post(`${this.baseUrl}`, atividade);
   }
 
-  updateAtividade(id: number, value: any): Observable<object> {
+  updateAtividade(id: string, value: any): Observable<object> {
     return this.httpData.put(`${this.baseUrl}/${id}`, value );
   }
 
