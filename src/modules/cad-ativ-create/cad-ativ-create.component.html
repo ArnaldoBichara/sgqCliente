@@ -7,11 +7,6 @@
     </div>
 
     <div class="form-group">
-        <label for="name">Título</label>
-        <input type="text" class="form-control" id="Título" required [(ngModel)]="cadAtividade.titulo" name="título">
-      </div>
-  
-    <div class="form-group">
       <label for="name">Descrição</label>
       <input type="text" class="form-control" id="Descricao" required [(ngModel)]="cadAtividade.descricao" name="descricao">
     </div>
@@ -23,16 +18,34 @@
 
     <div class="form-group">
         <label for="name">Associado a 'norma' ou 'padrão'?</label>
-        <input type="text" class="form-control" id="normapadraotipo" required [(ngModel)]="cadAtividade.normapadrao.tipo" name="normapadraotipo">
+        <input type="text" class="form-control" id="cadAtividadenormaPadraoAssociadatipo" required [(ngModel)]="cadAtividade.normaPadraoAssociada.tipo" name="cadAtividadenormaPadraoAssociadatipo">
     </div>
     <div class="form-group">
         <label for="name">Código da Norma/Padrão</label>
-        <input type="text" class="form-control" id="normapadraocodigo" required [(ngModel)]="cadAtividade.normapadrao.codigo" name="normapadraocodigo">
+        <input type="text" class="form-control" id="cadAtividadenormaPadraoAssociadacodigo" required [(ngModel)]="cadAtividade.normaPadraoAssociada.codigo" name="cadAtividadenormaPadraoAssociadacodigo">
     </div>
     <div class="form-group">
         <label for="name">Título da Norma/Padrão</label>
-        <input type="text" class="form-control" id="normapadraotitulo" required [(ngModel)]="cadAtividade.normapadrao.titulo" name="normapadraotitulo">
+        <input type="text" class="form-control" id="normapadraotitulo" required [(ngModel)]="cadAtividade.normaPadraoAssociada.titulo" name="normaPadraoAssociada.titulo">
     </div>
-      <button type="submit" class="btn btn-success">Salvar</button>
+
+    <div class="form-group">
+      <label for="name">Associado a 'processo' ou 'produto'?</label>
+      <input type="text" class="form-control" id="ppatipo" required [(ngModel)]="cadAtividade.produtoProcessoAssociado.tipo" name="ppa.tipo">
+    </div>
+    <div class="form-group">
+      <label for="name">Código do Produto/Processo</label>
+      <input type="text" class="form-control" id="ppacodigo" required [(ngModel)]="cadAtividade.produtoProcessoAssociado.codigo" name="ppa.codigo">
+    </div>
+    <div class="form-group">
+      <label for="name">Nome do Produto/Processo</label>
+      <input type="text" class="form-control" id="ppatitulo" required [(ngModel)]="cadAtividade.produtoProcessoAssociado.nome" name="ppa.titulo">
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
   </form>
+</div>
+<div [hidden]="!submitted">
+  <h4>Registro de Atividade Ok!</h4>
+  <button class="btn btn-success" (click)="newCadAtividade()">Add</button>
 </div>

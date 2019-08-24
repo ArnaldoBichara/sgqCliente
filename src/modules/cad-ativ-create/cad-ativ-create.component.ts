@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CadAtividade } from '../cad-ativs/cad-ativ.model';
+import { CadAtividade, NormaPadrao, ProdutoProcesso } from '../cad-ativs/cad-ativ.model';
 import { CadAtivService } from '../cad-ativs/cad-ativ.service';
+import { CadAtivsComponent } from '../cad-ativs/cad-ativs.component';
 
 @Component({
   selector: 'app-cad-ativ-create',
@@ -9,6 +10,7 @@ import { CadAtivService } from '../cad-ativs/cad-ativ.service';
   styleUrls: ['./cad-ativ-create.component.scss']
 })
 export class CadAtivCreateComponent implements OnInit {
+
   cadAtividade: CadAtividade = new CadAtividade();
   submitted = false;
 
@@ -16,11 +18,13 @@ export class CadAtivCreateComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-  }
+    this.cadAtividade.normaPadraoAssociada = new NormaPadrao();
+    this.cadAtividade.produtoProcessoAssociado = new ProdutoProcesso();
+    }
   newCadAtividade(): void {
-    this.submitted = false;
-    this.cadAtividade = new CadAtividade();
-  }
+      this.submitted = false;
+      this.cadAtividade = new CadAtividade();
+    }
 
   save() {
     this.cadAtivService.createCadAtiv(this.cadAtividade)

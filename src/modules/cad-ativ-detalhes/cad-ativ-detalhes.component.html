@@ -12,10 +12,10 @@
     <label><b>Usergroup Associado: </b></label> {{cadAtividade.usergroup}}
   </div>  
   <div>
-    <div *ngIf="isNorma">
+    <div *ngIf="!isNorma">
       <h5>Padrao Associado:</h5> 
     </div>
-    <div *ngIf="!isNorma">
+    <div *ngIf="isNorma">
       <h5>Norma Associada:</h5> 
     </div>
     <div>

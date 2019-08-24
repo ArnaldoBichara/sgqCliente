@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { CadAtividade } from '../cad-ativs/cad-ativ.model';
+import { CadAtividade, NormaPadrao, ProdutoProcesso } from '../cad-ativs/cad-ativ.model';
 import { CadAtivService } from '../cad-ativs/cad-ativ.service';
 
 @Component({
@@ -20,6 +20,8 @@ export class CadAtivDetalhesComponent implements OnInit {
 
   ngOnInit() {
     this.cadAtividade = new CadAtividade();
+    this.cadAtividade.normaPadraoAssociada = new NormaPadrao();
+    this.cadAtividade.produtoProcessoAssociado = new ProdutoProcesso();
     this.codigo = this.route.snapshot.params.codigo;
 
     this.cadAtivService.getCadAtiv(this.codigo)
