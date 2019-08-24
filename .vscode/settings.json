@@ -1,0 +1,7 @@
+{
+    "appService.zipIgnorePattern": [
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/83798472-0b34-4c1b-aa84-aa40a5623ad4/resourceGroups/PucMinas/providers/Microsoft.Web/sites/SGQCliente",
+    "appService.deploySubpath": "dist\\SGQClient"
+}
