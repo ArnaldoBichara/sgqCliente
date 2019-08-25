@@ -6,17 +6,15 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Código</th>
-            <th>Descrição</th>
             <th>Id</th>
+            <th>Descrição</th>
             <th>Operações</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let atividade of atividades | async">
-            <td>{{atividade.codigo}}</td>
-            <td>{{atividade.descricao}}</td>
             <td>{{atividade.id}}</td>
+            <td>{{atividade.descricao}}</td>
             <td>
                 <button (click)="atividadeDetalhes(atividade.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
             </td>

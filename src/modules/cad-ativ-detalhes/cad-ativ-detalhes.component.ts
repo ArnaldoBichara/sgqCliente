@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { CadAtividade, NormaPadrao, ProdutoProcesso } from '../cad-ativs/cad-ativ.model';
+import { CadAtividade } from '../cad-ativs/cad-ativ.model';
 import { CadAtivService } from '../cad-ativs/cad-ativ.service';
+import { NormaPadrao } from '../atividade/norma-padrao.model';
+import { ProdutoProcesso } from '../atividade/produto-processo.model';
 
 @Component({
   selector: 'app-cad-ativ-detalhes',

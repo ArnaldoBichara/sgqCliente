@@ -1,34 +1,19 @@
+import { NormaPadrao } from '../atividade/norma-padrao.model';
+import { ProdutoProcesso } from '../atividade/produto-processo.model';
+import { InstProdutoProcesso } from '../atividade/instproduto-processo.model';
+import { Workflow } from '../atividade/workflow.model';
+
 export class Atividade {
     id: string;
     codigo: string;
     descricao: string;
     usergroup: string;
-    normaPadrao: {
-        tipo: string;
-        codigo: string;
-        titulo: string;
-    };
-    produtoProcessoAssociados: {
-        tipo: string;
-        codigo: string;
-        nome: string;
-    };
-    workflowAssociado: {
-        id: string;
-        codigo: string;
-        nome: string;
-    };
+    normaPadraoAssociada: NormaPadrao;
+    produtoProcessoAssociado: ProdutoProcesso;
+    workflowAssociado: Workflow;
     usuarioAtribuido: string; // em branco: nenhum usuário atribuído
     estado: string;           // aberto; fechado
     dataInicio: Date;
     dataFim: Date;
-    produtoProcessoAnalisados: {
-        tipo: string;
-        codigo: string;
-        nome: string;
-        local: string;
-        situacao: string; // conforme; nao conforme
-        naoConformidade: string;
-        comentario: string;
-    };
+    produtoProcessoAnalisados: InstProdutoProcesso;
 }

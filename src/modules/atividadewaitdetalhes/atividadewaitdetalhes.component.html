@@ -12,19 +12,28 @@
     <label><b>Descrição: </b></label> {{atividade.descricao}}
   </div>
   <div>
-    <label><b>Associado a produto ou processo?: </b></label> {{atividade.produtoProcessoAssociados.tipo}}
-  </div>  
-  <div>
-    <label><b>Código do Produto/Processo: </b></label> {{atividade.produtoProcessoAssociados.codigo}}
-  </div>  
-  <div>
-    <label><b>Nome do Produto/Processo: </b></label> {{atividade.produtoProcessoAssociados.nome}}
-  </div>  
-  <div>
-    <label><b>Data de Início: </b></label> {{atividade.dataInicio}}
+    <label><b>Grupo de Trabalho: </b></label> {{atividade.usergroup}}
   </div>
+  <div>
+    <label><b>Associado a produto ou processo?: </b></label> {{atividade.produtoProcessoAssociado.tipo}}
+  </div>  
+  <div>
+    <label><b>Código do Produto/Processo: </b></label> {{atividade.produtoProcessoAssociado.codigo}}
+  </div>  
+  <div>
+    <label><b>Nome do Produto/Processo: </b></label> {{atividade.produtoProcessoAssociado.nome}}
+  </div>  
+  <div>
+    <label><b>Associado a norma ou padrão?: </b></label> {{atividade.normaPadraoAssociada.tipo}}
+  </div>  
+  <div>
+    <label><b>Código da Norma/Padrão: </b></label> {{atividade.normaPadraoAssociada.codigo}}
+  </div>  
+  <div>
+    <label><b>Título da Norma/Padrão: </b></label> {{atividade.normaPadraoAssociada.titulo}}
+  </div>  
 </div>
 <br>
 <br>
-<button (click)="atribuir()" class="btn btn-primary">Atribuir Atividade</button><br>
+<button (click)="atribuir()" class="btn btn-primary">Atribuir</button><br>
 <button (click)="list()" class="btn btn-primary">Voltar à lista de atividades</button><br>

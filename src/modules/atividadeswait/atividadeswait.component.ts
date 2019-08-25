@@ -30,7 +30,7 @@ export class AtividadesComponent implements OnInit {
     this.atividades = this.atividadeService.getAtividadesWaiting();
   }
   atividadeDetalhes(id: string) {
-    this.router.navigate(['detalhesAtividadeWait', id]);
+    this.router.navigate(['atividadeWaitDetalhes', id]);
   }
   atividadeAtribuir(id: string) {
     let atividade = new Atividade();
@@ -48,6 +48,6 @@ export class AtividadesComponent implements OnInit {
  }
 
  list() {
-  this.router.navigate(['/atividadeswait']);
+  this.router.navigate(['/atividadesWait']);
   }
 }

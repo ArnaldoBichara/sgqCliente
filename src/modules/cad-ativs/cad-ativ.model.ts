@@ -1,3 +1,6 @@
+import { NormaPadrao } from '../atividade/norma-padrao.model';
+import { ProdutoProcesso } from '../atividade/produto-processo.model';
+
 export class CadAtividade {
     codigo: string;
     descricao: string;
@@ -5,14 +8,3 @@ export class CadAtividade {
     normaPadraoAssociada: NormaPadrao;
     produtoProcessoAssociado: ProdutoProcesso;
 }
-export class NormaPadrao {
-    tipo: string;
-    codigo: string;
-    titulo: string;
-}
-export class ProdutoProcesso {
-    tipo: string;
-    codigo: string;
-    nome: string;
-}
-

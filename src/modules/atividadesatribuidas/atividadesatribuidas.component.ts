@@ -29,10 +29,10 @@ export class AtividadesAtribComponent implements OnInit {
   reloadData() {
     this.atividades = this.atividadeservice.getMinhasAtividades(this.secService.UserData.nome);
   }
-  atividadeDetalhes(id: number){
-    this.router.navigate(['detalhesaAtividadeAtrib', id]);
+  atividadeDetalhes(id: number) {
+    this.router.navigate(['atividadeAtribDetalhes', id]);
   }
-  registrarAtividade(id: number){
+  registrarAtividade(id: number) {
     this.router.navigate(['registrarAtividade', id]);
   }
 }
