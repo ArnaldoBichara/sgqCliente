@@ -28,6 +28,6 @@ export class AtividadeService {
     return this.httpData.get (`${this.baseUrl}/waiting`);
   }
   getMinhasAtividades(user: any): Observable<any> {
-    return this.httpData.get (`${this.baseUrl}/atribuidas/${user}`);
+    return this.httpData.get (`${this.baseUrl}/atrib/${user}`);
   }
 }
