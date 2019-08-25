@@ -4,4 +4,4 @@ export class InstProdutoProcesso {
     situacao: string; // conforme; nao conforme
     naoConformidade: string;
     comentario: string;
-};
+}

@@ -1,4 +1,4 @@
-<h2>Atividade a Atribuir</h2> 
+<h2>Atividade Atribuída</h2> 
 
 <hr/>
 <div *ngIf="atividade">
@@ -10,9 +10,6 @@
   </div>
   <div>
     <label><b>Descrição: </b></label> {{atividade.descricao}}
-  </div>
-  <div>
-    <label><b>Grupo de Trabalho: </b></label> {{atividade.usergroup}}
   </div>
   <div>
     <label><b>Associado a produto ou processo?: </b></label> {{atividade.produtoProcessoAssociado.tipo}}
@@ -36,8 +33,8 @@
 <br>
 <br>
 <td>
-  <button (click)="atribuir()" class="btn btn-primary" style="margin-left: 10px">Atribuir</button><br>
+  <button (click)="list()" class="btn btn-primary">Voltar à lista de atividades</button><br>
 </td>
 <td>
-    <button (click)="list()" class="btn btn-primary"style="margin-left: 10px" >Voltar à lista de atividades</button><br>
+  <button (click)="registrarAtividade()" class="btn btn-info" style="margin-left: 10px">Registrar Execução</button>
 </td>

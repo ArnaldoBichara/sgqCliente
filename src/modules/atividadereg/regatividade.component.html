@@ -1,73 +1,73 @@
 <h2>Registro de Atividade de Qualidade</h2> 
 
-<div [hidden]="submitted" style="width: 400px;">
+<hr/>
+<div [hidden]="submitted">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Código: </label> {{atividade.codigo}}
+      <label for="name"><b>Id: </b></label>
+      <label class="form-control">{{atividade.id}} </label>
     </div>
     <div class="form-group">
-      <label for="name">Descrição: </label> {{atividade.descricao}}
+      <label for="name"><b>Código: </b></label> 
+      <label class="form-control">{{atividade.codigo}} </label>
     </div>
     <div class="form-group">
-      <label for="name">Produto/Processo Associado: </label>
-      <div class="form-group">
-        <label for="name">Tipo: </label>{{atividade.produtoProcessoAssociados.tipo}}
-      </div>
-      <div class="form-group">
-        <label for="name">Código: </label>{{atividade.produtoProcessoAssociados.codigo}}
-      </div>
-      <div class="form-group">
-        <label for="name">Nome: </label>{{atividade.produtoProcessoAssociados.nome}}
-      </div>
+      <label for="name"><b>Descrição: </b> </label>
+      <label class="form-control"> {{atividade.descricao}} </label>
     </div>
     <div class="form-group">
-      <label for="name">Padrão/Norma Associado: </label>{{atividade.normaPadrao.tipo}}
+      <label for="name"><b>Padrão ou Norma Associado? </b> </label>
+      <label class="form-control">{{atividade.normaPadraoAssociada.tipo}} </label>
     </div>
     <div class="form-group">
-      <label for="name">Código do Padrão/Norma: </label>{{atividade.normaPadrao.codigo}}
+      <label for="name"><b>Código do Padrão/Norma: </b> </label>
+      <label class="form-control">{{atividade.normaPadraoAssociada.codigo}} </label>
     </div>
     <div class="form-group">
-      <label for="name">Título do Padrão/Norma: </label>{{atividade.normaPadrao.titulo}}
+      <label for="name"><b>Título do Padrão/Norma: </b></label>
+      <label class="form-control">{{atividade.normaPadraoAssociada.titulo}} </label>
     </div>
     <div class="form-group">
-      <label for="name">Usuario Atribuído: </label>{{atividade.usuarioAtribuido}}
+      <label for="name"><b>Usuario Atribuído: </b> </label>
+      <label class="form-control">{{atividade.usuarioAtribuido}} </label>
+    </div>
+    <div class="form-group">
+      <label for="name"><b>Produto ou Processo Associado? </b> </label>
+      <label class="form-control">{{atividade.produtoProcessoAssociado.tipo}} </label>
+    </div>
+    <div class="form-group">
+      <label for="name"><b>Código do Produto/Processo: </b> </label>
+      <label class="form-control">{{atividade.produtoProcessoAssociado.codigo}} </label>
+    </div>
+    <div class="form-group">
+      <label for="name"><b>Nome do Produto/Processo: </b> </label>
+      <label class="form-control">{{atividade.produtoProcessoAssociado.nome}} </label>
+    </div>
+    <div class="form-group">
+      <label for="name"><b> Local do Processo: </b></label>
+      <input type="text" class="form-control" id="produtoProcessosAnalisadoslocal" required [(ngModel)]="atividade.produtoProcessoAnalisados.local" name="produtoProcessoAnalisadoslocal">
+    </div>
+    <div class="form-group">
+      <label for="name"><b> Situação do Produto/Processo </b>('conforme' ou 'nao conforme'): </label>
+      <input type="text" class="form-control" id="produtoProcessosAnalisados.situacao" required [(ngModel)]="atividade.produtoProcessoAnalisados.situacao" name="produtoProcessoAnalisadossituacao">
+    </div>
+    <div class="form-group">
+      <label for="name"> Se houver, indique a Não Conformidade associada: </label>
+      <input type="text" class="form-control" id="produtoProcessosAnalisados.nc" required [(ngModel)]="atividade.produtoProcessoAnalisados.naoConformidade" name="produtoProcessoAnalisados.nc">
+    </div>
+    <div class="form-group">
+      <label for="name"> Comentários: </label>
+      <input type="text" class="form-control" id="produtoProcessosAnalisados.comentario" required [(ngModel)]="atividade.produtoProcessoAnalisados.comentario" name="produtoProcessoAnalisadoscomentario">
     </div>
     <div class="form-group">
       <label for="name">Data Inicial da Atividade: </label>
-      <input type="datetime-local" class="form-control" id="dataInicio" [(ngModel)]="atividade.dataInicio" name="dataInicio">
+      <input type="datetime-local" class="form-control" id="dataInicio" required [(ngModel)]="atividade.dataInicio" name="dataInicio">
     </div>
     <div class="form-group">
       <label for="name">Data Final da Atividade: </label>
-      <input type="datetime-local" class="form-control" id="dataFim" [(ngModel)]="atividade.dataFim" name="dataFim">
+      <input type="datetime-local" class="form-control" id="dataFim" required [(ngModel)]="atividade.dataFim" name="dataFim">
     </div>
-    <div class="form-group">
-      <label for="name">Produto/Processo Analisado</label>
-      <div class="form-group">
-          <label for="name">Tipo ('produto' ou 'processo'): </label>
-          <input type="text" class="form-control" id="produtoProcessosAnalisadostipo" required [(ngModel)]="produtoProcessoAnalisados.tipo" name="produtoProcessoAnalisadostipo">
-      </div>
-      <div class="form-group">
-        <label for="name"> Código: </label>
-        <input type="text" class="form-control" id="produtoProcessosAnalisadoscodigo" required [(ngModel)]="produtoProcessoAnalisados.codigo" name="produtoProcessoAnalisadoscodigo">
-      </div>
-      <div class="form-group">
-        <label for="name"> Nome: </label>
-        <input type="text" class="form-control" id="produtoProcessosAnalisadosnome" required [(ngModel)]="produtoProcessoAnalisados.nome" name="produtoProcessoAnalisadosnome">
-      </div>
-      <div class="form-group">
-        <label for="name"> Local do Processo: </label>
-        <input type="text" class="form-control" id="produtoProcessosAnalisadoslocal" required [(ngModel)]="produtoProcessoAnalisados.local" name="produtoProcessoAnalisadoslocal">
-      </div>
-      <div class="form-group">
-        <label for="name"> Situação ('conforme' ou 'nao conforme'): </label>
-        <input type="text" class="form-control" id="produtoProcessosAnalisados.situacao" required [(ngModel)]="produtoProcessoAnalisados.local" name="produtoProcessoAnalisadossituacao">
-      </div>
-      <div class="form-group">
-        <label for="name"> Comentários: </label>
-        <input type="text" class="form-control" id="produtoProcessosAnalisados.comentario" required [(ngModel)]="produtoProcessoAnalisados.comentario" name="produtoProcessoAnalisadoscomentario">
-      </div>
-    </div>
-    <button type="submit" class="btn btn-success">Salvar</button>
+    <button type="submit" class="btn btn-success">Registrar Execução</button>
   </form>
 </div>
 

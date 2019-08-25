@@ -11,8 +11,8 @@ import { Workflow } from '../atividade/workflow.model';
 
 @Component({
   selector: 'app-atividadeatribdetalhes',
-  templateUrl: './atividadeatribdetalhes.component.html',
-  styleUrls: ['./atividadeatribdetalhes.component.scss']
+  templateUrl: './atividadeatribuidadetalhes.component.html',
+  styleUrls: ['./atividadeatribuidadetalhes.component.scss']
 })
 export class AtividadeAtribDetalhesComponent implements OnInit {
 
@@ -41,11 +41,11 @@ export class AtividadeAtribDetalhesComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  registrarAtividade(id: number) {
-    this.router.navigate(['registrarAtividade', id]);
+  registrarAtividade() {
+    this.router.navigate(['registrarAtividade', this.id]);
   }
 
   list() {
-    this.router.navigate(['/atividadesatrib']);
+    this.router.navigate(['/atividadesAtrib']);
   }
 }

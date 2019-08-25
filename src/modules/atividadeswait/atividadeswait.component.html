@@ -6,20 +6,20 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>Índice</th>
             <th>Descrição</th>
             <th>Operações</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let atividade of atividades | async">
-            <td>{{atividade.id}}</td>
+          <tr *ngFor="let atividade of atividades | async; let i = index">
+            <td>{{i}}</td>
             <td>{{atividade.descricao}}</td>
             <td>
                 <button (click)="atividadeDetalhes(atividade.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
             </td>
             <td>
-                <button (click)="atividadeAtribuir(atividade.id)" class="btn btn-info" style="margin-left: 10px">Atribuir</button>
+                <button (click)="atividadeAtribuir(atividade)" class="btn btn-info" style="margin-left: 10px">Atribuir</button>
             </td>
           </tr>
         </tbody>

@@ -41,9 +41,12 @@ export class AtividadeWaitDetalhesComponent implements OnInit {
 
   atribuir() {
       this.atividade.usuarioAtribuido = this.secService.UserData.nome;
-      this.atividadeService.updateAtividade(this.id, this.atividade)
-        .subscribe(data => console.log(data), error => console.log(error));
+      this.atividade.estado = 'atribuida';
+      this.atividadeService.updateAtividade(this.atividade)
+        .subscribe(
+          data => console.log(data), error => console.log(error));
       this.atividade = new Atividade();
+      this.atividadeService.getAtividadesWaiting();
       this.list();
   }
 

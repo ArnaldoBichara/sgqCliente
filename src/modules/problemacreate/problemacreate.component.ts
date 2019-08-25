@@ -18,8 +18,8 @@ import { CadProblemasService } from '../cad-problemas/cad-problemas.service';
 export class ProblemaCreateComponent implements OnInit {
 
   cadProblemas: CadProblema[];
-  cadProblema: CadProblema;
 
+  cadProblema = new CadProblema();
   problema = new Problema();
   submitted = false;
 
@@ -45,6 +45,7 @@ export class ProblemaCreateComponent implements OnInit {
   newProblema(): void {
     this.submitted = false;
     this.problema = new Problema();
+    this.cadProblema = new CadProblema();
   }
 
   onSubmit() {

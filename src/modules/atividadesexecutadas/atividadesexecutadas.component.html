@@ -1,26 +1,21 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2> Minhas Atividades </h2>
+      <h2> Lista de Atividades Executadas </h2>
     </div>
     <div class="panel-body">
       <table class="table table-striped">
         <thead>
           <tr>
+            <th>Id</th>
             <th>Código</th>
             <th>Descrição</th>
-            <th>Operações</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let atividade of atividades | async">
+            <td>{{atividade.id}}</td>
             <td>{{atividade.codigo}}</td>
             <td>{{atividade.descricao}}</td>
-            <td>
-                <button (click)="atividadeDetalhes(atividade.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
-            </td>
-            <td>
-                <button (click)="registrarAtividade(atividade.id)" class="btn btn-info" style="margin-left: 10px">Registrar Execucao</button>
-            </td>
           </tr>
         </tbody>
       </table>

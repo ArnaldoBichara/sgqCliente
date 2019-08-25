@@ -13,6 +13,7 @@ import { SecurityService } from '../shared/security.service';
 export class AtividadesComponent implements OnInit {
 
   atividades: Observable<Atividade[]>;
+  i: number;
 
   constructor(private atividadeService: AtividadeService,
               private router: Router,
@@ -20,11 +21,6 @@ export class AtividadesComponent implements OnInit {
 
   ngOnInit() {
       this.reloadData();
-      this.atividadeService.getAtividadesWaiting()
-      .subscribe(
-          data => { console.log(data); },
-          error => console.log(error)
-        );
   }
   reloadData() {
     this.atividades = this.atividadeService.getAtividadesWaiting();
@@ -32,20 +28,17 @@ export class AtividadesComponent implements OnInit {
   atividadeDetalhes(id: string) {
     this.router.navigate(['atividadeWaitDetalhes', id]);
   }
-  atividadeAtribuir(id: string) {
-    let atividade = new Atividade();
-
-    this.atividadeService.getAtividade(id)
-      .subscribe(data => { console.log(data); atividade = data; },
-                 error => console.log(error));
+  atividadeAtribuir(atividade: Atividade) {
 
     atividade.usuarioAtribuido = this.secService.UserData.nome;
+    atividade.estado = 'atribuida';
 
-    this.atividadeService.updateAtividade(id, atividade)
-        .subscribe(data => console.log(data),
-                   error => console.log(error));
-    this.list();
- }
+    this.atividadeService.updateAtividade(atividade)
+      .subscribe(data => { console.log(data);
+                           this.reloadData();
+                         },
+                 error => console.log(error));
+  }
 
  list() {
   this.router.navigate(['/atividadesWait']);

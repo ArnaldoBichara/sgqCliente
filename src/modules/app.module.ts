@@ -24,8 +24,9 @@ import { CadAtivDetalhesComponent } from './cad-ativ-detalhes/cad-ativ-detalhes.
 import { AtividadesComponent } from './atividadeswait/atividadeswait.component';
 import { AtividadeWaitDetalhesComponent } from './atividadewaitdetalhes/atividadewaitdetalhes.component';
 import { AtividadesAtribComponent } from './atividadesatribuidas/atividadesatribuidas.component';
-import { AtividadeAtribDetalhesComponent } from './atividadeatribdetalhes/atividadeatribdetalhes.component';
+import { AtividadeAtribDetalhesComponent } from './atividadeatribuidadetalhes/atividadeatribuidadetalhes.component';
 import { RegistrarAtividadeComponent } from './atividadereg/regatividade.component';
+import { AtividadesExecutadasComponent } from './atividadesexecutadas/atividadesexecutadas.component';
 
 // Services
 import { HttpService } from './shared/http.service';
@@ -51,6 +52,7 @@ import { StorageService } from './shared/storage.service';
     AtividadeWaitDetalhesComponent,
     AtividadesAtribComponent,
     AtividadeAtribDetalhesComponent,
+    AtividadesExecutadasComponent,
     RegistrarAtividadeComponent
   ],
   imports: [

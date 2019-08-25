@@ -20,12 +20,15 @@ export class AtividadeService {
     return this.httpData.post(`${this.baseUrl}`, atividade);
   }
 
-  updateAtividade(id: string, value: any): Observable<object> {
-    return this.httpData.put(`${this.baseUrl}/${id}`, value );
+  updateAtividade(atividade: object): Observable<object> {
+    return this.httpData.put(`${this.baseUrl}`, atividade );
   }
 
   getAtividadesWaiting(): Observable<any> {
     return this.httpData.get (`${this.baseUrl}/waiting`);
+  }
+  getAtividadesExec(): Observable<any> {
+    return this.httpData.get (`${this.baseUrl}/executadas`);
   }
   getMinhasAtividades(user: any): Observable<any> {
     return this.httpData.get (`${this.baseUrl}/atrib/${user}`);

@@ -6,11 +6,11 @@ import { Atividade } from '../atividade/atividade.model';
 import { SecurityService } from '../shared/security.service';
 
 @Component({
-  selector: 'app-atividadesatribuidas',
-  templateUrl: './atividadesatribuidas.component.html',
-  styleUrls: ['./atividadesatribuidas.component.scss']
+  selector: 'app-atividadesexecutadas',
+  templateUrl: './atividadesexecutadas.component.html',
+  styleUrls: ['./atividadesexecutadas.component.scss']
 })
-export class AtividadesAtribComponent implements OnInit {
+export class AtividadesExecutadasComponent implements OnInit {
 
   atividades: Observable<Atividade[]>;
 
@@ -22,12 +22,6 @@ export class AtividadesAtribComponent implements OnInit {
       this.reloadData();
   }
   reloadData() {
-    this.atividades = this.atividadeservice.getMinhasAtividades(this.secService.UserData.nome);
-  }
-  atividadeDetalhes(id: number) {
-    this.router.navigate(['atividadeAtribDetalhes', id]);
-  }
-  registrarAtividade(id: number) {
-    this.router.navigate(['registrarAtividade', id]);
+    this.atividades = this.atividadeservice.getAtividadesExec();
   }
 }

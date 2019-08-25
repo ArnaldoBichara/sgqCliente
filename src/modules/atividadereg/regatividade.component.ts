@@ -4,6 +4,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SecurityService } from '../shared/security.service';
 import { AtividadeService } from '../atividade/atividade.service';
 import { Atividade } from '../atividade/atividade.model';
+import { NormaPadrao } from '../atividade/norma-padrao.model';
+import { ProdutoProcesso } from '../atividade/produto-processo.model';
+import { InstProdutoProcesso } from '../atividade/instproduto-processo.model';
+import { Workflow } from '../atividade/workflow.model';
 
 @Component({
   selector: 'app-regatividade',
@@ -22,6 +26,10 @@ export class RegistrarAtividadeComponent implements OnInit {
 
   ngOnInit() {
     this.atividade = new Atividade();
+    this.atividade.normaPadraoAssociada = new NormaPadrao();
+    this.atividade.produtoProcessoAssociado = new ProdutoProcesso();
+    this.atividade.produtoProcessoAnalisados = new InstProdutoProcesso();
+    this.atividade.workflowAssociado = new Workflow();
 
     this.id = this.route.snapshot.params.id;
 
@@ -36,13 +44,8 @@ export class RegistrarAtividadeComponent implements OnInit {
   }
   save() {
     this.atividade.estado = 'completada';
-    this.atividadeService.updateAtividade(this.id, this.atividade)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.gotoList();
-  }
-
-  gotoList() {
-    this.router.navigate(['/home']);
-  }
-
+    this.atividadeService.updateAtividade(this.atividade)
+      .subscribe( data => {console.log(data);},
+                  error => console.log(error));
+    this.router.navigate(['/atividadesAtrib']);  }
 }
