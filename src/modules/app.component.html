@@ -5,46 +5,42 @@
       <a routerLink="login" class="nav-link" routerLinkActive="active">Login</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated">
-    <a routerLink="atividadesWait" class="nav-link" routerLinkActive="active">Atividades para Meu Grupo</a>
+    <a routerLink="atividadesWait" class="nav-link" routerLinkActive="active">Ativ grupo</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated">
-    <a routerLink="atividadesAtrib" class="nav-link" routerLinkActive="active">Minhas Atividades</a>
+    <a routerLink="atividadesAtrib" class="nav-link" routerLinkActive="active">Minhas ativ</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated">
-    <a routerLink="addProblema" class="nav-link" routerLinkActive="active">Registrar Problema</a>
-  </li>
-  <li class="nav-item" *ngIf="Authenticated">
-      <a routerLink="home" class="nav-link" routerLinkActive="active">Ajuda</a>
+    <a routerLink="addProblema" class="nav-link" routerLinkActive="active">Reg prob</a>
   </li>
   </ul>
-</nav>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <ul class="navbar-nav">
     <!-- Links -->
     <li class="nav-item" *ngIf="Authenticated">
-      <a routerLink="problemas" class="nav-link" routerLinkActive="active">Problemas Em Aberto</a>
+      <a routerLink="problemas" class="nav-link" routerLinkActive="active">Probl abertos</a>
     </li>
     <li class="nav-item" *ngIf="Authenticated">
-      <a routerLink="atividadesExecutadas" class="nav-link" routerLinkActive="active">Atividades Executadas</a>
+      <a routerLink="atividadesExecutadas" class="nav-link" routerLinkActive="active">Ativ exec</a>
     </li>
   </ul>
-</nav>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <ul class="navbar-nav">
     <!-- Links -->
   <li class="nav-item" *ngIf="Authenticated">
-      <a routerLink="cadAtividades" class="nav-link" routerLinkActive="active">Atividades Cadastradas</a>
+      <a routerLink="cadAtividades" class="nav-link" routerLinkActive="active">Ativ cad</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated">
-      <a routerLink="addCadAtividade" class="nav-link" routerLinkActive="active">Cadastrar Atividade</a>
+      <a routerLink="addCadAtividade" class="nav-link" routerLinkActive="active">Cadastrar ativ</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated">
-      <a routerLink="cadProblemas" class="nav-link" routerLinkActive="active">Problemas Cadastrados</a>
+      <a routerLink="cadProblemas" class="nav-link" routerLinkActive="active">Probl cad</a>
   </li>
   <li class="nav-item" *ngIf="Authenticated">
-      <a routerLink="addCadProblema" class="nav-link" routerLinkActive="active">Cadastrar Problema</a>
+      <a routerLink="addCadProblema" class="nav-link" routerLinkActive="active">Cadastrar Probl</a>
   </li>
-  </ul>
+  <li class="nav-item" *ngIf="Authenticated">
+    <a routerLink="home" class="nav-link" routerLinkActive="active">Ajuda</a>
+  </li>
+</ul>
 </nav>
 <div class="container">
   <br>
