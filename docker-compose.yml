@@ -3,8 +3,9 @@ version: '3.7'
 services:
 
   sgqclient:
+    container_name: sgqclient
     image:
-      sgq/sgqclient:v1.0
+      sgq/sgqclient:latest
     build:
       context: .
       dockerfile: Dockerfile
