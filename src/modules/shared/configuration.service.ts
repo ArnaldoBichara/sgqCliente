@@ -2,6 +2,8 @@
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Configuration } from './configuration.model';
 import { StorageService } from './storage.service';
+import { environment } from '../../environments/environment';
+
 
 import { Observable, Subject } from 'rxjs';
 
@@ -18,7 +20,7 @@ export class ConfigurationService {
     load() {
         // TODO - por agora está fixo
         this.serverSettings = new Configuration();
-        this.serverSettings.apiGwUrl = 'http://192.168.0.26';
+        this.serverSettings.apiGwUrl = environment.apiGwURL;
 
 /*        const baseURI = document.baseURI.endsWith('/') ? document.baseURI : `${document.baseURI}/`;
         const url = `${baseURI}Home/Configuration`;
