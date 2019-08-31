@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpService} from '../shared/http.service';
+import { ConfigurationService } from '../shared/configuration.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CadAtivService {
 
-  private baseUrl = 'http://localhost:5202/api/v1/w/CadAtiv';
+  private baseUrl: string;
 
-  constructor(private http: HttpClient, private httpData: HttpService) { }
+  constructor( private httpData: HttpService,
+               private configurationService: ConfigurationService) {
+    this.baseUrl = this.configurationService.serverSettings.apiGwUrl + ':5202/api/v1/w/CadAtiv';
+  }
 
 
   getCadAtiv(codigo: string): Observable<any> {

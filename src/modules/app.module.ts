@@ -32,6 +32,7 @@ import { AtividadesExecutadasComponent } from './atividadesexecutadas/atividades
 import { HttpService } from './shared/http.service';
 import { SecurityService } from './shared/security.service';
 import { StorageService } from './shared/storage.service';
+import { ConfigurationService } from './shared/configuration.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { StorageService } from './shared/storage.service';
   providers: [
     HttpService,
     SecurityService,
-    StorageService
+    StorageService,
+    ConfigurationService
   ],
   bootstrap: [AppComponent]
 })
