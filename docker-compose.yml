@@ -5,7 +5,7 @@ services:
   sgqclient:
     container_name: sgqclient
     image:
-      sgq/sgqclient:latest
+      arnaldobichara/sgqclient:latest
     build:
       context: .
       dockerfile: Dockerfile
