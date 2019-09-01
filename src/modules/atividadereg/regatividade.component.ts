@@ -45,7 +45,7 @@ export class RegistrarAtividadeComponent implements OnInit {
   save() {
     this.atividade.estado = 'completada';
     this.atividadeService.updateAtividade(this.atividade)
-      .subscribe( data => {console.log(data);},
+      .subscribe( data => {console.log(data); },
                   error => console.log(error));
-    this.router.navigate(['/atividadesAtrib']);  }
+    this.router.navigate(['/home']);  }
 }
