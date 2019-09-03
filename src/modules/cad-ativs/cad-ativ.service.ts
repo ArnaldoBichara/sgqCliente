@@ -12,7 +12,7 @@ export class CadAtivService {
 
   constructor( private httpData: HttpService,
                private configurationService: ConfigurationService) {
-    this.baseUrl = this.configurationService.serverSettings.apiGwUrl + ':5202/api/v1/w/CadAtiv';
+      this.baseUrl =   'http://' +  window.location.hostname + ':5202/api/v1/w/CadAtiv';
   }
 
 

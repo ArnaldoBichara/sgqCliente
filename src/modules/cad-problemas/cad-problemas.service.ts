@@ -11,9 +11,8 @@ export class CadProblemasService {
 
   private baseUrl: string;
 
-  constructor(private httpData: HttpService,
-              private configurationService: ConfigurationService) {
-                this.baseUrl = this.configurationService.serverSettings.apiGwUrl + ':5202/api/v1/p/CadProblema';
+  constructor(private httpData: HttpService) {
+                this.baseUrl =   'http://' +  window.location.hostname + ':5202/api/v1/p/CadProblema';
               }
 
 

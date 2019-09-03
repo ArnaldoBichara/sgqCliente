@@ -14,10 +14,12 @@ export class AppComponent implements OnInit {
   Authenticated = false;
   subscription: Subscription;
 
+
+
   private userName = '';
 
   constructor(private secService: SecurityService,
-              private configurationService: ConfigurationService,
+              private configurationService: ConfigurationService
               ) { }
   ngOnInit() {
     console.log('app on init');
