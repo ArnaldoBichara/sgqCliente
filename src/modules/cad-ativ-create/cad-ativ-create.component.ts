@@ -40,6 +40,6 @@ export class CadAtivCreateComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/cadAtividades']);
+    this.router.navigate(['/home']);
   }
 }

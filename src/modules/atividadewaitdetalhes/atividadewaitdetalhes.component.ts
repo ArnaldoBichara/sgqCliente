@@ -47,8 +47,8 @@ export class AtividadeWaitDetalhesComponent implements OnInit {
           data => console.log(data), error => console.log(error));
       this.atividade = new Atividade();
       this.atividadeService.getAtividadesWaiting();
-      this.list();
-  }
+      this.router.navigate(['/home']);
+    }
 
   list() {
     this.router.navigate(['/atividadesWait']);
