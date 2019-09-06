@@ -40,6 +40,7 @@ export class ProblemaCreateComponent implements OnInit {
   selectCadProblema() {
     this.problema.codigo = this.cadProblema.codigo;
     this.problema.descricao = this.cadProblema.descricao;
+    this.problema.acoes_Corretivas = this.cadProblema.acoes_Corretivas;
   }
 
   newProblema(): void {
