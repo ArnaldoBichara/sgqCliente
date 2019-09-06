@@ -36,6 +36,6 @@ export class CadProblemaCreateComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/cadProblemas']);
+    this.router.navigate(['/home']);
   }
 }

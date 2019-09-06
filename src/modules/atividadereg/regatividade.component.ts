@@ -31,6 +31,7 @@ export class RegistrarAtividadeComponent implements OnInit {
     this.atividade.produtoProcessoAssociado = new ProdutoProcesso();
     this.atividade.produtoProcessoAnalisados = new InstProdutoProcesso();
     this.atividade.workflowAssociado = new Workflow();
+    this.atividade.estado = 'aberto';
 
     this.id = this.route.snapshot.params.id;
 

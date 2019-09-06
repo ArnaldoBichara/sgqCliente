@@ -29,6 +29,7 @@ export class ProblemaCreateComponent implements OnInit {
 
   ngOnInit() {
     this.problema.quemReportou = this.secService.UserData.nome;
+    this.problema.estado = 'aberto';
     this.getCadProblemas();
 
   }
@@ -43,12 +44,6 @@ export class ProblemaCreateComponent implements OnInit {
     this.problema.acoes_Corretivas = this.cadProblema.acoes_Corretivas;
   }
 
-  newProblema(): void {
-    this.submitted = false;
-    this.problema = new Problema();
-    this.cadProblema = new CadProblema();
-  }
-
   onSubmit() {
     this.submitted = true;
     this.save();
@@ -61,6 +56,6 @@ export class ProblemaCreateComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/problemas']);
+    this.router.navigate(['/home']);
   }
 }
