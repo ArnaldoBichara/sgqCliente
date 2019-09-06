@@ -1,2 +1,2 @@
 call ng build --prod="true"
-docker-compose up --no-deps
+docker-compose up --no-deps -d
