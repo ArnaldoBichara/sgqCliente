@@ -18,6 +18,7 @@ export class RegistrarAtividadeComponent implements OnInit {
 
   id: string;
   atividade: Atividade;
+  submitted = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -40,6 +41,7 @@ export class RegistrarAtividadeComponent implements OnInit {
       }, error => console.log(error));
   }
   onSubmit() {
+    this.submitted = true;
     this.save();
   }
   save() {
