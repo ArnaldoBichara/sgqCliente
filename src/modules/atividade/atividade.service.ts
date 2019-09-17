@@ -13,7 +13,7 @@ export class AtividadeService {
 
   constructor(private httpData: HttpService,
               private configurationService: ConfigurationService) {
-      this.baseUrl =   'http://' +  window.location.hostname + ':5202/api/v1/w/RegAtiv';
+      this.baseUrl =   'http://' +  window.location.hostname + ':5110/api/v1/Workflow/RegAtiv';
     }
 
   getAtividade(id: string): Observable<any> {
