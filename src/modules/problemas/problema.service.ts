@@ -12,7 +12,7 @@ export class ProblemaService {
 
   constructor(private httpData: HttpService,
               private configurationService: ConfigurationService) {
-                this.baseUrl =   'http://' +  window.location.hostname + ':5109/api/v1/Problemas/RegProblema';
+                this.baseUrl =   'http://' +  window.location.hostname + '/api/v1/Problemas/RegProblema';
               }
 
 

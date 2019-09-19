@@ -12,7 +12,7 @@ export class CadProblemasService {
   private baseUrl: string;
 
   constructor(private httpData: HttpService) {
-                this.baseUrl =   'http://' +  window.location.hostname + ':5109/api/v1/Problemas/CadProblema';
+                this.baseUrl =   'http://' +  window.location.hostname + '/api/v1/Problemas/CadProblema';
               }
 
 
